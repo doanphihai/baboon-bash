@@ -6,3 +6,4 @@
 # Allow these files
 !.bashrc
 !.gitignore
+!README.md
