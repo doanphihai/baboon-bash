@@ -1,0 +1,8 @@
+# This is a whitelist gitignore
+
+# Ignore everything by default
+*
+
+# Allow these files
+!.bashrc
+!.gitignore
