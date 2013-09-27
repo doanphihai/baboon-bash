@@ -2,8 +2,8 @@
 
 ## Installation
 
-Simple clone this repo into `~/`
+Clone this repo into `~/`
 
 ## Updating it
 
-If you add a new file to it (ex: `.profile`), remember to add it to the whitelist in `.gitignore`
+If you add a new file, remember the whitelist in `.gitignore`
