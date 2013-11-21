@@ -4,7 +4,8 @@
 *
 
 # Allow these files
-!.bashrc
+!.gitconfig
 !.bash_aliases
 !.gitignore
+!.gitignore_global
 !README.md

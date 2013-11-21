@@ -1,0 +1,55 @@
+[user]
+	name = Louis Kottmann
+        email = louis.kottman@cpexterne.org
+
+[branch]
+	; When a new branch is created with git branch or git checkout that tracks
+	; another branch, this variable tells git to set up pull to rebase instead of
+	; merge (see "branch.<name>.rebase"). When never, rebase is never automatically
+	; set to true. When local, rebase is set to true for tracked branches of other
+	; local branches. When remote, rebase is set to true for tracked branches of
+	; remote-tracking branches. When always, rebase will be set to true for all
+	; tracking branches.        	
+        autosetuprebase = always
+
+[diff]
+        tool = ediff
+        guitool = ediff
+
+[difftool "ediff"]
+        cmd = ~/.emacs.d/personal/scripts/ediff.sh $LOCAL $REMOTE $MERGED
+
+[merge]
+        tool = ediff
+
+[mergetool "ediff"]
+        cmd = ~/.emacs.d/personal/scripts/ediff.sh $LOCAL $REMOTE $MERGED $BASE
+        trustExitCode = true
+
+[alias]
+	co = checkout
+	pr = pull --rebase
+	ci = commit
+	st = status
+	br = branch
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
+	undo = reset --soft HEAD^
+	# t for tree
+	t = log --graph --decorate --pretty=oneline --abbrev-commit
+	tt = log --graph --all --decorate --pretty=oneline --abbrev-commit
+	d = diff
+	unstage = reset HEAD --
+
+[core]
+	excludesfile = ~/.gitignore_global
+
+[push]
+	default = tracking
+[dude]
+	icon = /home/louis/Downloads/Logos-Github-icon.png
+	notify-command = notify-send -t 40000 -i \"$ICON_PATH\" \"$TITLE\" \"$DESCRIPTION\"
+[color]
+	status = always
+	diff = always
