@@ -70,3 +70,8 @@ alias kill-emacs="emacsclient -e '(kill-emacs)'"
 alias radio-classique="wget http://radioclassique.ice.infomaniak.ch/radioclassique-high.mp3?ua=wwwradioclassique -O - | mplayer -cache-min 64 -cache 256 -"
 alias radio-size="wget http://size.ice.infomaniak.ch/size-128.mp3 -O - | mplayer -cache-min 64 -cache 256 -"
 alias radio-meuh="wget http://genisse.radiomeuh.com/big.mp3 -O - | mplayer -cache-min 64 -cache 256 -"
+
+# Music
+function fplay {
+    find /media/trinasse/partage/Musique/ -type f -iname "*$@*" -print0 | xargs -0 vlc;
+}
