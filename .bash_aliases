@@ -67,9 +67,16 @@ alias em='emacsclient -n -a "" -F "((fullscreen . maximized))"'
 alias kill-emacs="emacsclient -e '(kill-emacs)'"
 
 # Radios
-alias radio-classique="wget http://radioclassique.ice.infomaniak.ch/radioclassique-high.mp3?ua=wwwradioclassique -O - | mplayer -cache-min 64 -cache 256 -"
-alias radio-size="wget http://size.ice.infomaniak.ch/size-128.mp3 -O - | mplayer -cache-min 64 -cache 256 -"
-alias radio-meuh="wget http://genisse.radiomeuh.com/big.mp3 -O - | mplayer -cache-min 64 -cache 256 -"
+function radio {
+    wget "$@" -O - | mplayer -cache-min 64 -cache 256 -
+}
+### ?ua=wwwradioclassique
+CLASSIQUE=http://radioclassique.ice.infomaniak.ch/radioclassique-high.mp3
+SIZE=http://size.ice.infomaniak.ch/size-128.mp3
+MEUH=http://genisse.radiomeuh.com/big.mp3
+alias radio-classique="radio $CLASSIQUE"
+alias radio-size="radio $SIZE"
+alias radio-meuh="radio $MEUH"
 
 # Music
 function fplay {
