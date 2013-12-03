@@ -63,7 +63,7 @@ set -o emacs
 export EDITOR='emacsclient -c -a "" -F "((fullscreen . maximized))"'
 
 # Aliases for emacs
-alias em='emacsclient -c -n -a "" -F "((fullscreen . maximized))"'
+alias em='emacsclient -n -a "" -F "((fullscreen . maximized))"'
 alias kill-emacs="emacsclient -e '(kill-emacs)'"
 
 # Radios
@@ -75,3 +75,6 @@ alias radio-meuh="wget http://genisse.radiomeuh.com/big.mp3 -O - | mplayer -cach
 function fplay {
     find /media/trinasse/partage/Musique/ -type f -iname "*$@*" -print0 | xargs -0 vlc;
 }
+
+# Bashmarks (install from https://github.com/huyng/bashmarks)
+source ~/.local/bin/bashmarks.sh
