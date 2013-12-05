@@ -63,7 +63,8 @@ set -o emacs
 export EDITOR='emacsclient -c -a "" -F "((fullscreen . maximized))"'
 
 # Aliases for emacs
-alias em='emacsclient -n -a "" -F "((fullscreen . maximized))"'
+alias em-no-c='emacsclient -n -a "" -F "((fullscreen . maximized))"'
+alias em='em-no-c || em-no-c -c'
 alias kill-emacs="emacsclient -e '(kill-emacs)'"
 
 # Radios
