@@ -30,6 +30,7 @@
 	co = checkout
 	pr = pull --rebase
 	ci = commit
+	cam = commit --all --message
 	st = status
 	br = branch
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
@@ -48,7 +49,7 @@
 [push]
 	default = tracking
 [dude]
-	icon = /home/louis/Downloads/Logos-Github-icon.png
+	icon = ~/.git-dude/Logos-Github-icon.png
 	notify-command = notify-send -t 20000 -i \"$ICON_PATH\" \"$TITLE\" \"$DESCRIPTION\"
 [color]
 	status = always
