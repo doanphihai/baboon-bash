@@ -86,3 +86,6 @@ function fplay {
 
 # Bashmarks (install from https://github.com/huyng/bashmarks)
 source ~/.local/bin/bashmarks.sh
+
+# General aliases
+alias vlcncurses='vlc --intf ncurses'
