@@ -89,3 +89,4 @@ source ~/.local/bin/bashmarks.sh
 
 # General aliases
 alias vlcncurses='vlc --intf ncurses'
+alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
