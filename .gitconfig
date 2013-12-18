@@ -29,7 +29,8 @@
 [alias]
 	co = checkout
 	pr = pull --rebase
-	ci = commit
+	c = commit
+	cm = commit --message
 	cam = commit --all --message
 	st = status
 	br = branch
