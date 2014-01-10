@@ -78,6 +78,11 @@ MEUH=http://genisse.radiomeuh.com/big.mp3
 alias radio-classique="radio $CLASSIQUE"
 alias radio-size="radio $SIZE"
 alias radio-meuh="radio $MEUH"
+alias radio-classique-morceau="curl -s 'http://www.radioclassique.fr/typo3temp/init_player_low.json' | \
+                               underscore print | \
+                               grep -E 'track\"|author\"' | \
+                               grep -Eo ': \".+\",$' | \
+                               sed -e 's/,\|\"\|://g'"
 
 # Music
 function fplay {
