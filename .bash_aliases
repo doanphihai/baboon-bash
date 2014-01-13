@@ -89,8 +89,12 @@ alias radios='vlcncurses $SIZE $CLASSIQUE $MEUH'
 alias radio-classique-morceau="curl -s 'http://www.radioclassique.fr/typo3temp/init_player_low.json' | \
                                underscore print | \
                                grep -E 'track\"|author\"' | \
-                               grep -Eo ': \".+\",$' | \
-                               sed -e 's/,\|\"\|://g'"
+                               sed -s 's/,\|\"//g' | \
+                               sed -s 's/:$//g'"
+alias radio-size-morceau="curl -s 'http://size-radio.com//radio/playingAndPlayed/index.php?' | \
+                          underscore print | \
+                          grep -E 'artist\"|title\"|album\"' | \
+                          sed -s 's/,\|\"//g'"
 
 # Music
 function fplay {
