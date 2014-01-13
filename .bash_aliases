@@ -67,6 +67,13 @@ alias em-no-c='emacsclient -n -a "" -F "((fullscreen . maximized))"'
 alias em='em-no-c || em-no-c -c'
 alias kill-emacs="emacsclient -e '(kill-emacs)'"
 
+# Bashmarks (install from https://github.com/huyng/bashmarks)
+source ~/.local/bin/bashmarks.sh
+
+# General aliases
+alias vlcncurses='vlc --intf ncurses'
+alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
+
 # Radios
 function radio {
     wget "$@" -O - | mplayer -cache-min 64 -cache 256 -
@@ -78,6 +85,7 @@ MEUH=http://genisse.radiomeuh.com/big.mp3
 alias radio-classique="radio $CLASSIQUE"
 alias radio-size="radio $SIZE"
 alias radio-meuh="radio $MEUH"
+alias radios='vlcncurses $SIZE $CLASSIQUE $MEUH'
 alias radio-classique-morceau="curl -s 'http://www.radioclassique.fr/typo3temp/init_player_low.json' | \
                                underscore print | \
                                grep -E 'track\"|author\"' | \
@@ -88,10 +96,3 @@ alias radio-classique-morceau="curl -s 'http://www.radioclassique.fr/typo3temp/i
 function fplay {
     find /media/trinasse/partage/Musique/ -type f -iname "*$@*" -print0 | xargs -0 vlc;
 }
-
-# Bashmarks (install from https://github.com/huyng/bashmarks)
-source ~/.local/bin/bashmarks.sh
-
-# General aliases
-alias vlcncurses='vlc --intf ncurses'
-alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
