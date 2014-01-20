@@ -29,8 +29,7 @@ get-current-song-on-radio-size() { # Multiline
 }
 format-for-saving() { # Artist-Track
     echo "$1"                   | \
-    grep -Eo '\"[^"]+\"$'       | \
-    sed 's/\"//g'               | \
+    awk -F'"' '{print $4}'      | \
     perl -i -pe 'chomp if eof'  | \
     tr '\n' "-"
     echo
