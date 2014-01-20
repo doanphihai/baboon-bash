@@ -3,7 +3,7 @@ KNOWN_RADIOS=('classique' 'size')
 
 get-current-song-on-radio-classique() { # Multiline
     curl -s 'http://www.radioclassique.fr/typo3temp/init_player_low.json'  | \
-    underscore print                                                       | \
+    python -mjson.tool                                                     | \
     grep -E 'author\"|track\"'                                             | \
     sed -s 's/,//g'                                                        | \
     sed -s 's/ *:\"$/\"/g'
@@ -23,7 +23,7 @@ get-current-song-on-radio-size() { # Multiline
          -H 'Cache-Control: no-cache'                                                                   \
          --data 'currentradiourl=size.ice.infomaniak.ch&currentradioport=80%2Fsize-128.mp3' | \
     tail -n 1                                                                               | \
-    underscore print                                                                        | \
+    python -mjson.tool                                                                      | \
     grep -E 'artist\"|song\"'                                                               | \
     sed -s 's/,//g'
 }
@@ -74,14 +74,14 @@ song() {
     echo
 
     # save to git-versionned file
-    read -p "Would you like to save that song (y/n)?"
+    read -p "Would you like to save that song (y/N)?"
     [[ "$REPLY" == "y" ]] || return
 
     local oneLiner=$(format-for-saving "$current")
     save-to-best-songs-list "$1" "$oneLiner"
 
     # commit and push to git remote
-    read -p "Would you like to update the git repository (y/n)?"
+    read -p "Would you like to update the git repository (y/N)?"
     [[ "$REPLY" == "y" ]] || return
 
     pushd .
