@@ -89,6 +89,7 @@ song() {
     cd "$GIT_BEST_SONGS_REPO"
     git add "$targetFile"
     git commit -m "added $oneLiner"
+    git pull origin master
     git push origin master
     popd
 }
