@@ -67,5 +67,11 @@ song() {
     save-to-best-songs-list "$1" "$current"
 
     # commit and push to git remote
-
+    read -p "Would you like to update the git repository (y/n)?"
+    [[ "$REPLY" == "y" ]] || return
+    pushd .
+    cd "$GIT_BEST_SONGS_REPO"
+    git commit -a -m "added $current"
+    git push origin master
+    popd
 }
