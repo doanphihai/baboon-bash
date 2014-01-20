@@ -86,7 +86,8 @@ song() {
 
     pushd .
     cd "$GIT_BEST_SONGS_REPO"
-    git commit -a -m "added $oneLiner"
+    git add .
+    git commit -m "added $oneLiner"
     git push origin master
     popd
 }
