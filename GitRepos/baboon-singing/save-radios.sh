@@ -10,9 +10,21 @@ get-current-song-on-radio-classique() { # Multiline
 }
 
 get-current-song-on-radio-size() { # Multiline
-    curl -s 'http://size-radio.com//radio/playingAndPlayed/index.php?' | \
-    underscore print | \
-    grep -E 'artist\"|title\"' | \
+    curl -s 'http://www.size-radio.org/icecast-songtitle.php'                                           \
+         -H 'Host: www.size-radio.org'                                                                  \
+         -H 'User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:28.0) Gecko/20100101 Firefox/28.0'  \
+         -H 'Accept: */*'                                                                               \
+         -H 'Accept-Language: en-US,en;q=0.5'                                                           \
+         -H 'DNT: 1' -H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8'                \
+         -H 'X-Requested-With: XMLHttpRequest'                                                          \
+         -H 'Referer: http://www.size-radio.org/Icecast/'                                               \
+         -H 'Connection: keep-alive'                                                                    \
+         -H 'Pragma: no-cache'                                                                          \
+         -H 'Cache-Control: no-cache'                                                                   \
+         --data 'currentradiourl=size.ice.infomaniak.ch&currentradioport=80%2Fsize-128.mp3' | \
+    tail -n 1                                                                               | \
+    underscore print                                                                        | \
+    grep -E 'artist\"|song\"'                                                               | \
     sed -s 's/,//g'
 }
 format-for-saving() { # Artist-Track
