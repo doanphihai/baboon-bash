@@ -86,15 +86,8 @@ alias radio-classique="radio $CLASSIQUE"
 alias radio-size="radio $SIZE"
 alias radio-meuh="radio $MEUH"
 alias radios='vlcncurses $SIZE $CLASSIQUE $MEUH'
-alias radio-classique-morceau="curl -s 'http://www.radioclassique.fr/typo3temp/init_player_low.json' | \
-                               underscore print | \
-                               grep -E 'track\"|author\"' | \
-                               sed -s 's/,\|\"//g' | \
-                               sed -s 's/:$//g'"
-alias radio-size-morceau="curl -s 'http://size-radio.com//radio/playingAndPlayed/index.php?' | \
-                          underscore print | \
-                          grep -E 'artist\"|title\"|album\"' | \
-                          sed -s 's/,\|\"//g'"
+
+source ~/GitRepos/baboon-singing/save-radios.sh
 
 # Music
 function fplay {
