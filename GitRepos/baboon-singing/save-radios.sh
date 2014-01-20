@@ -37,7 +37,7 @@ format-for-saving() { # Artist-Track
 }
 save-to-best-songs-list() {
     local formattedSongRef="$2"
-    local targetFile=$GIT_BEST_SONGS_REPO/$1.md
+    local targetFile="$1"
     echo $formattedSongRef >> $targetFile
 }
 array-contains-element() {
@@ -78,7 +78,8 @@ song() {
     [[ "$REPLY" == "y" ]] || return
 
     local oneLiner=$(format-for-saving "$current")
-    save-to-best-songs-list "$1" "$oneLiner"
+    local targetFile=$GIT_BEST_SONGS_REPO/$1.md
+    save-to-best-songs-list "$targetFile" "$oneLiner"
 
     # commit and push to git remote
     read -p "Would you like to update the git repository (y/N)?"
@@ -86,7 +87,7 @@ song() {
 
     pushd .
     cd "$GIT_BEST_SONGS_REPO"
-    git add .
+    git add "$targetFile"
     git commit -m "added $oneLiner"
     git push origin master
     popd
