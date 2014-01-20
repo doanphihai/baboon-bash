@@ -1,2 +1,4 @@
 /.idea
 .projectile
+.tern-project
+.tern-port
