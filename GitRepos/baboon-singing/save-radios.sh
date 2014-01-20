@@ -36,7 +36,7 @@ format-for-saving() { # Artist-Track
     echo
 }
 save-to-best-songs-list() {
-    local formattedSongRef=$(format-for-saving "$2")
+    local formattedSongRef="$2"
     local targetFile=$GIT_BEST_SONGS_REPO/$1.md
     echo $formattedSongRef >> $targetFile
 }
@@ -76,14 +76,17 @@ song() {
     # save to git-versionned file
     read -p "Would you like to save that song (y/n)?"
     [[ "$REPLY" == "y" ]] || return
-    save-to-best-songs-list "$1" "$current"
+
+    local oneLiner=$(format-for-saving "$current")
+    save-to-best-songs-list "$1" "$oneLiner"
 
     # commit and push to git remote
     read -p "Would you like to update the git repository (y/n)?"
     [[ "$REPLY" == "y" ]] || return
+
     pushd .
     cd "$GIT_BEST_SONGS_REPO"
-    git commit -a -m "added $current"
+    git commit -a -m "added $oneLiner"
     git push origin master
     popd
 }
