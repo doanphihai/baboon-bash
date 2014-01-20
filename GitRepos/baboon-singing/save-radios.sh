@@ -2,12 +2,13 @@ GIT_BEST_SONGS_REPO=$HOME/GitRepos/baboon-singing
 KNOWN_RADIOS=('classique' 'size')
 
 get-current-song-on-radio-classique() { # Multiline
-    curl -s 'http://www.radioclassique.fr/typo3temp/init_player_low.json' | \
-    underscore print | \
-    grep -E 'author\"|track\"' | \
-    sed -s 's/,//g' | \
+    curl -s 'http://www.radioclassique.fr/typo3temp/init_player_low.json'  | \
+    underscore print                                                       | \
+    grep -E 'author\"|track\"'                                             | \
+    sed -s 's/,//g'                                                        | \
     sed -s 's/ *:\"$/\"/g'
 }
+
 get-current-song-on-radio-size() { # Multiline
     curl -s 'http://size-radio.com//radio/playingAndPlayed/index.php?' | \
     underscore print | \
@@ -15,10 +16,10 @@ get-current-song-on-radio-size() { # Multiline
     sed -s 's/,//g'
 }
 format-for-saving() { # Artist-Track
-    echo "$1" | \
-    grep -Eo '\"[^"]+\"$' | \
-    sed 's/\"//g' | \
-    perl -i -pe 'chomp if eof' | \
+    echo "$1"                   | \
+    grep -Eo '\"[^"]+\"$'       | \
+    sed 's/\"//g'               | \
+    perl -i -pe 'chomp if eof'  | \
     tr '\n' "-"
     echo
 }
