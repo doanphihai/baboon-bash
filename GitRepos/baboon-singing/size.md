@@ -1,4 +1,2 @@
-Chill Bump-Lost In The Sound
-Jean du Voyage-The Closest Ghost feat Djela
-[21/01/14 18h]   Roxy Music-Love Is the Drug
-
+[21/01/14 18h]   Chill Bump-Lost In The Sound
+[21/01/14 18h]   Jean du Voyage-The Closest Ghost feat Djela
