@@ -10,6 +10,12 @@ Purple="\033[0;35m"
 BRed="\033[1;31m"
 BPurple="\033[1;35m"
 # set up command prompt
+function ahead_behind {
+    local branch=$(git rev-parse --abbrev-ref HEAD);
+    local remote=$(git config branch.$branch.remote);
+    local merge_branch=$(git config branch.$branch.merge | cut -d / -f 3);
+    git rev-list --left-right --count $branch...$remote/$merge_branch | tr -s '\t' '|';
+}
 function __prompt_command()
 {
     # capture the exit status of the last command
@@ -47,7 +53,7 @@ function __prompt_command()
         fi
 
         # add the result to prompt
-        PS1+="\[$Color_On\][$branch]\[$Color_Off\] "
+        PS1+="\[$Color_On\][$branch]\[$Color_Off\][$(ahead_behind)] "
     fi
 
     # prompt $ or # for root
