@@ -32,13 +32,11 @@ format-for-saving() { # Artist-Track
     awk -F'"' '{print $4}'                       | \
     perl -i -pe 'chomp if eof'                   | \
     sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/ ~ /g'
-    echo
 }
 save-to-best-songs-list() {
     local formattedSongRef="$2"
     local targetFile="$1"
-    echo "- " $(date +"[%d/%m/%y %Hh]") $formattedSongRef >> $targetFile
-    echo '' >> $targetFile
+    echo "-" $(date +"[%d/%m/%y %Hh]") $formattedSongRef >> $targetFile
 }
 array-contains-element() {
     local e
