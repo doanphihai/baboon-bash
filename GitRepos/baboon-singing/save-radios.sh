@@ -88,8 +88,8 @@ song() {
     pushd .
     cd "$GIT_BEST_SONGS_REPO"
     git add "$targetFile"
-    git commit -m "added $oneLiner"
-    git pull origin master
-    git push origin master
+    git commit --quiet -m "added $oneLiner"
+    git pull --quiet origin master
+    git push --quiet origin master
     popd
 }
