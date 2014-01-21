@@ -37,7 +37,7 @@ format-for-saving() { # Artist-Track
 save-to-best-songs-list() {
     local formattedSongRef="$2"
     local targetFile="$1"
-    echo $(date +"[%d/%m/%y %Hh]") " " $formattedSongRef >> $targetFile
+    echo "- " $(date +"[%d/%m/%y %Hh]") $formattedSongRef >> $targetFile
     echo '' >> $targetFile
 }
 array-contains-element() {
