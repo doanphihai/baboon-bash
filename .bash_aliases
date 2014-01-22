@@ -13,7 +13,7 @@ BPurple="\033[1;35m"
 function ahead_behind {
     local branch=$(git rev-parse --abbrev-ref HEAD)
     local remote=$(git config branch."$branch".remote)
-    local merge_branch=$(git config branch."$branch".merge | cut -d / -f 3)
+    local merge_branch=$(git config branch."$branch".merge | cut -d / -f 3,4,5,6)
     local rev_list=$(git rev-list --left-right --count "$branch"..."$remote"/"$merge_branch")
     local behind=$(echo "$rev_list" | awk '{print $2}')
     local behind_str="[$behind"
@@ -28,7 +28,7 @@ function ahead_behind {
     if [[ "$behind" == 0 ]]; then
         ahead_behind+="$behind_str"
     else
-        ahead_behind+="\[$Purple\]$behind_str\[$Color_Off\]"
+        ahead_behind+="\[$Red\]$behind_str\[$Color_Off\]"
     fi
     ahead_behind+="|"
     if [[ "$ahead" == 0 ]]; then
