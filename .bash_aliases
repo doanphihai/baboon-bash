@@ -11,10 +11,32 @@ BRed="\033[1;31m"
 BPurple="\033[1;35m"
 # set up command prompt
 function ahead_behind {
-    local branch=$(git rev-parse --abbrev-ref HEAD);
-    local remote=$(git config branch.$branch.remote);
-    local merge_branch=$(git config branch.$branch.merge | cut -d / -f 3);
-    git rev-list --left-right --count $branch...$remote/$merge_branch | tr -s '\t' '|';
+    local branch=$(git rev-parse --abbrev-ref HEAD)
+    local remote=$(git config branch."$branch".remote)
+    local merge_branch=$(git config branch."$branch".merge | cut -d / -f 3)
+    local rev_list=$(git rev-list --left-right --count "$branch"..."$remote"/"$merge_branch")
+    local behind=$(echo "$rev_list" | awk '{print $2}')
+    local behind_str="[$behind"
+    local ahead=$(echo "$rev_list" | awk '{print $1}')
+    local ahead_str="$ahead]"
+    local ahead_behind=""
+    if [[ "$ahead" == 0 && "$behind" == 0 ]]; then
+        echo ''
+        return
+    fi
+
+    if [[ "$behind" == 0 ]]; then
+        ahead_behind+="$behind_str"
+    else
+        ahead_behind+="\[$Purple\]$behind_str\[$Color_Off\]"
+    fi
+    ahead_behind+="|"
+    if [[ "$ahead" == 0 ]]; then
+        ahead_behind+="$ahead_str"
+    else
+        ahead_behind+="\[$Green\]$ahead_str\[$Color_Off\]"
+    fi
+    echo "$ahead_behind"
 }
 function __prompt_command()
 {
@@ -53,7 +75,7 @@ function __prompt_command()
         fi
 
         # add the result to prompt
-        PS1+="\[$Color_On\][$branch]\[$Color_Off\][$(ahead_behind)] "
+        PS1+="\[$Color_On\][$branch]\[$Color_Off\]$(ahead_behind) "
     fi
 
     # prompt $ or # for root
