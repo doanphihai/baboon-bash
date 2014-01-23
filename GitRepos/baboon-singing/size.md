@@ -2,3 +2,4 @@
 - [21/01/14 18h] Jean du Voyage ~ The Closest Ghost feat Djela
 - [21/01/14 22h] Emancipator ~ Good Knight
 - [21/01/14 23h] Santigold ~ Disparate Youth
+- [23/01/14 18h] Idle Warship ~ Enemy
