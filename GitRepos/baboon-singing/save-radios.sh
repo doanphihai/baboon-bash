@@ -64,6 +64,14 @@ song() {
         return
     fi
 
+    local targetFile=$GIT_BEST_SONGS_REPO/$1.md
+
+    if [[ "$2" == "list" ]]; then
+        # list saved songs
+        cat "$targetFile"
+        return
+    fi
+
     # display infos on current song to the user
     echo
     echo "Radio $1"
@@ -76,7 +84,6 @@ song() {
     [[ "$REPLY" == "y" ]] || return
 
     local oneLiner=$(format-for-saving "$current")
-    local targetFile=$GIT_BEST_SONGS_REPO/$1.md
     save-to-best-songs-list "$targetFile" "$oneLiner"
 
     # commit and push to git remote
