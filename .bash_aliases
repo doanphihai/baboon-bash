@@ -12,6 +12,11 @@ BPurple="\033[1;35m"
 # set up command prompt
 function ahead_behind {
     local branch=$(git rev-parse --abbrev-ref HEAD)
+    if ( ! git config --list | grep -E ^branch."$branch" > /dev/null )
+    then
+        echo ''
+        return
+    fi
     local remote=$(git config branch."$branch".remote)
     local merge_branch=$(git config branch."$branch".merge | cut -d / -f 3,4,5,6)
     local rev_list=$(git rev-list --left-right --count "$branch"..."$remote"/"$merge_branch")
