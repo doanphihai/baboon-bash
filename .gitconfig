@@ -41,6 +41,7 @@
 	# t for tree
 	t = log --graph --decorate --pretty=oneline --abbrev-commit
 	tt = log --graph --all --decorate --pretty=oneline --abbrev-commit
+	gg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 	d = diff
 	unstage = reset HEAD --
 
