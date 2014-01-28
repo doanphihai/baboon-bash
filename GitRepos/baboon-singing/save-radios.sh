@@ -15,7 +15,8 @@ get-current-song-on-radio-size() { # Multiline
          -H 'User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:28.0) Gecko/20100101 Firefox/28.0'  \
          -H 'Accept: */*'                                                                               \
          -H 'Accept-Language: en-US,en;q=0.5'                                                           \
-         -H 'DNT: 1' -H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8'                \
+         -H 'DNT: 1'                                                                                    \
+         -H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8'                            \
          -H 'X-Requested-With: XMLHttpRequest'                                                          \
          -H 'Referer: http://www.size-radio.org/Icecast/'                                               \
          -H 'Connection: keep-alive'                                                                    \
