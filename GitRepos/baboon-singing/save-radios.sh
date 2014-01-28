@@ -90,11 +90,11 @@ song() {
     read -p "Would you like to update the git repository (y/N)?"
     [[ "$REPLY" == "y" ]] || return
 
-    pushd .
+    pushd . >/dev/null
     cd "$GIT_BEST_SONGS_REPO"
     git add "$targetFile"
     git commit --quiet -m "added $oneLiner"
     git pull --quiet origin master
     git push --quiet origin master
-    popd
+    popd >/dev/null
 }
