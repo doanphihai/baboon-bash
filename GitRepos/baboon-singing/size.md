@@ -3,3 +3,4 @@
 - [21/01/14 22h] Emancipator ~ Good Knight
 - [21/01/14 23h] Santigold ~ Disparate Youth
 - [23/01/14 18h] Idle Warship ~ Enemy
+- [28/01/14 23h] Bill Fay ~ Screams In the Ears
