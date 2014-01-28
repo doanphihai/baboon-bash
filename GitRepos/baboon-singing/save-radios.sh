@@ -95,7 +95,9 @@ song() {
     cd "$GIT_BEST_SONGS_REPO"
     git add "$targetFile"
     git commit --quiet -m "added $oneLiner"
+    git stash --quiet
     git pull --quiet origin master
     git push --quiet origin master
+    git stash pop --quiet
     popd >/dev/null
 }
