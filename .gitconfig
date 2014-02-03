@@ -32,7 +32,7 @@
 	c = commit
 	cm = commit --message
 	cam = commit --all --message
-	st = status
+	st = status -sb
 	br = branch
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	type = cat-file -t
