@@ -113,10 +113,8 @@ function radio {
 CLASSIQUE=http://radioclassique.ice.infomaniak.ch/radioclassique-high.mp3
 SIZE=http://size.ice.infomaniak.ch/size-128.mp3
 MEUH=http://genisse.radiomeuh.com/big.mp3
-alias radio-classique="radio $CLASSIQUE"
-alias radio-size="radio $SIZE"
-alias radio-meuh="radio $MEUH"
-alias radios='vlcncurses $SIZE $CLASSIQUE $MEUH'
+NOVA=http://novazz.ice.infomaniak.ch/novazz-128.mp3
+alias radios='vlcncurses $SIZE $CLASSIQUE $MEUH $NOVA'
 
 source ~/GitRepos/baboon-singing/save-radios.sh
 
