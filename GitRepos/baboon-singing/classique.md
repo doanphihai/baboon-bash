@@ -1,4 +1,4 @@
 - [28/01/14 11h] Beethoven ~ Symphonie n°5: 2è mvt Orch Philh Seoul / M-W.Chun
 - [28/01/14 13h] Saeverud ~ Tango pour 2 pianos M.Rudy / M.Alperin
 - [28/01/14 14h] Mendelssohn ~ Ouverture:Les Hébrides Orch Gewandhaus Leipzig / R.Chailly
-- [03/02/14 18h] Rachmaninoff Symphony no.2 op.27
+- [03/02/14 18h] Rachmaninoff ~ Symphony no.2 op.27
