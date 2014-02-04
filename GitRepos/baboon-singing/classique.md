@@ -2,3 +2,4 @@
 - [28/01/14 13h] Saeverud ~ Tango pour 2 pianos M.Rudy / M.Alperin
 - [28/01/14 14h] Mendelssohn ~ Ouverture:Les Hébrides Orch Gewandhaus Leipzig / R.Chailly
 - [03/02/14 18h] Rachmaninoff ~ Symphony no.2 op.27
+- [04/02/14 11h] Mozart ~ Concerto pour piano n°23: 2è mvt R.Serkin / Orch Symph Londres / C.Abbado
