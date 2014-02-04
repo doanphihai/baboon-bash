@@ -1,3 +1,37 @@
+- [Vintage Size] The Nextmen ~ Something got you
+- [Vintage Size] DJ Signify ~ 1993
+- [Vintage Size] The Kills  ~ Cheap and Cheerful
+- [Vintage Size] Bethurum ~ Watch it Burn
+- [Vintage Size] Woodkid ~ Iron
+- [Vintage Size] Gramatik ~ Day of the so called Glory
+- [Vintage Size] Willy Moon ~ Yeah Yeah
+- [Vintage Size] Nicolas Jaar ~ Encore
+- [Vintage Size] Kidkanevil ~ Ill Connoiseur
+- [Vintage Size] Jamie N Commons ~ Now Is Not The Time
+- [Vintage Size] Terranova ~ Bombing Bastards
+- [Vintage Size] Flevans ~ Small Room Syndrome
+- [Vintage Size] The Milk ~ Broke Up The Family
+- [Vintage Size] Galactic ~ Heart of Steel
+- [Vintage Size] Chill Bump ~ Lost In The Sound
+- [Vintage Size] Jukebox Champions ~ Real (feat. Lauren Spink)
+- [Vintage Size] Breakout ~ Lyve Wire
+- [Vintage Size] Nasser ~ The Shooter
+- [Vintage Size] Nasser ~ Retrosexual
+- [Vintage Size] Sole ~ Terror In The Water
+- [Vintage Size] Random Recipe ~ Something On My Mind
+- [Vintage Size] Two Door Cinema Club ~ Something Good Can Work - The Twelves Remix
+- [Vintage Size] Souleance ~ La Californie
+- [Vintage Size] Les Rythmes Digitales featuring Nik Kershaw ~ Sometimes
+- [Vintage Size] aim feat. kate rogers ~ the girl who fell through the ice
+- [Vintage Size] Anthony Hamilton & Elayna Boynton ~ Freedom
+- [Vintage Size] Rodrigo y Gabriela~ Triveni
+- [Vintage Size] Nick Kershaw ~ Les Rythmes Digitales
+- [Vintage Size] Roseaux ~ More than Material
+- [Vintage Size] The Herbaliser ~ Goldrush
+- [Vintage Size] Happy Holidays ~ Cocosuma
+- [Vintage Size] The xx ~ Fiction (Kulkid & Fever 105 Remixx)
+- [Vintage Size] Electro Deluxe ~ Devil
+- [Vintage Size] Roger Molls ~ The Listener
 - [21/01/14 18h] Chill Bump ~ Lost In The Sound
 - [21/01/14 18h] Jean du Voyage ~ The Closest Ghost feat Djela
 - [21/01/14 22h] Emancipator ~ Good Knight
