@@ -85,7 +85,6 @@ song() {
         return
     fi
 
-
     local targetFile=$GIT_BEST_SONGS_REPO/$1.md
 
     if [[ "$2" == "list" ]]; then
