@@ -60,7 +60,7 @@ save-to-git() {
     git stash pop --quiet
     popd >/dev/null
 }
-song() {
+show-menu() {
     # make sure we target a known radio
     if ( ! array-contains-element "$1" "${KNOWN_RADIOS[@]}" )
     then
@@ -76,8 +76,11 @@ song() {
             ''|*[!0-9]*) song ;;
             *) song "${KNOWN_RADIOS[$radioChoice]}" ;;
         esac
-        return
+        exit
     fi
+}
+song() {
+    show-menu "$1"
 
     local targetFile=$GIT_BEST_SONGS_REPO/$1.md
 
