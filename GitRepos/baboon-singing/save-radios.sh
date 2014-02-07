@@ -79,7 +79,7 @@ song() {
     # display infos on current song to the user
     echo
     echo "Radio $1"
-    local current="$(get-current-song-on-radio-$1)"
+    local current="$(utfout "$(get-current-song-on-radio-$1)")"
     echo "$current"
     echo
 
