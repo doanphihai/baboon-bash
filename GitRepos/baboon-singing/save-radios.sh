@@ -49,6 +49,17 @@ array-contains-element() {
     done;
     return 1
 }
+save-to-git() {
+    pushd . >/dev/null
+    cd "$GIT_BEST_SONGS_REPO"
+    git add "$1"
+    git commit --quiet -m "added $2"
+    git stash --quiet
+    git pull --quiet origin master
+    git push --quiet origin master
+    git stash pop --quiet
+    popd >/dev/null
+}
 song() {
     # make sure we target a known radio
     if ( ! array-contains-element "$1" "${KNOWN_RADIOS[@]}" )
@@ -89,18 +100,5 @@ song() {
 
     local oneLiner=$(format-for-saving "$current")
     save-to-best-songs-list "$targetFile" "$oneLiner"
-
-    # commit and push to git remote
-    read -p "Would you like to update the git repository (y/N)?"
-    [[ "$REPLY" == "y" ]] || return
-
-    pushd . >/dev/null
-    cd "$GIT_BEST_SONGS_REPO"
-    git add "$targetFile"
-    git commit --quiet -m "added $oneLiner"
-    git stash --quiet
-    git pull --quiet origin master
-    git push --quiet origin master
-    git stash pop --quiet
-    popd >/dev/null
+    save-to-git "$targetFile" "$oneLiner"
 }
