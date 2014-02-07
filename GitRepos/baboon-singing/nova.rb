@@ -12,10 +12,10 @@ request["Accept"]     = 'application/json, text/javascript'
 response      = http.request(request)
 response_json = JSON.parse(response.body)
 nova_markup   = response_json['track']['markup']
-$noko_nova    = Nokogiri::HTML(nova_markup)
+noko_nova    = Nokogiri::HTML(nova_markup)
 
-def get_info(css_class)
-  $noko_nova.css(css_class).text.strip
+define_method(:get_info) do |css_class|
+  noko_nova.css(css_class).text.strip
 end
 
 artist = get_info('.artist')
