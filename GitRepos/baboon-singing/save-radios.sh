@@ -1,5 +1,5 @@
 GIT_BEST_SONGS_REPO=$HOME/GitRepos/baboon-singing
-KNOWN_RADIOS=('classique' 'size')
+KNOWN_RADIOS=('classique' 'size' 'nova')
 
 get-current-song-on-radio-classique() { # Multiline
     curl -s 'http://www.radioclassique.fr/typo3temp/init_player_low.json'  | \
@@ -8,7 +8,6 @@ get-current-song-on-radio-classique() { # Multiline
     sed -s 's/,//g'                                                        | \
     sed -s 's/ *:\"$/\"/g'
 }
-
 get-current-song-on-radio-size() { # Multiline
     curl -s 'http://www.size-radio.org/icecast-songtitle.php'                                           \
          -H 'Host: www.size-radio.org'                                                                  \
@@ -28,6 +27,10 @@ get-current-song-on-radio-size() { # Multiline
     grep -E 'artist\"|song\"'                                                               | \
     sed -s 's/,//g'
 }
+get-current-song-on-radio-nova() { # Multiline
+    ruby $GIT_BEST_SONGS_REPO/nova.rb
+}
+
 format-for-saving() { # Artist-Track
     echo "$1"                                    | \
     awk -F'"' '{print $4}'                       | \
