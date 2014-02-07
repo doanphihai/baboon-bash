@@ -1,3 +1,5 @@
+#!/bin/bash
+
 GIT_BEST_SONGS_REPO=$HOME/GitRepos/baboon-singing
 KNOWN_RADIOS=('classique' 'size' 'nova')
 
@@ -61,26 +63,28 @@ save-to-git() {
     popd >/dev/null
 }
 show-menu() {
+    echo -e "Pick a radio:\n"
+    local idx=0
+    local step=1
+    for radio in "${KNOWN_RADIOS[@]}"; do
+        echo -e "\t$idx - $radio"
+        idx=$((idx + step))
+    done;
+    read radioChoice
+    case "$radioChoice" in
+        ''|*[!0-9]*) song ;;
+        *) song "${KNOWN_RADIOS[$radioChoice]}" ;;
+    esac
+    return
+}
+song() {
     # make sure we target a known radio
     if ( ! array-contains-element "$1" "${KNOWN_RADIOS[@]}" )
     then
-        echo -e "Pick a radio:\n"
-        local idx=0
-        local step=1
-        for radio in "${KNOWN_RADIOS[@]}"; do
-            echo -e "\t$idx - $radio"
-            idx=$((idx + step))
-        done;
-        read radioChoice
-        case "$radioChoice" in
-            ''|*[!0-9]*) song ;;
-            *) song "${KNOWN_RADIOS[$radioChoice]}" ;;
-        esac
-        exit
+        show-menu "$1"
+        return
     fi
-}
-song() {
-    show-menu "$1"
+
 
     local targetFile=$GIT_BEST_SONGS_REPO/$1.md
 
