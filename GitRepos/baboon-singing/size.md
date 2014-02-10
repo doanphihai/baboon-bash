@@ -39,3 +39,4 @@
 - [23/01/14 18h] Idle Warship ~ Enemy
 - [28/01/14 23h] Bill Fay ~ Screams In the Ears
 - [10/02/14 13h] Balthazar ~ Later
+- [10/02/14 14h] Hollie Cook ~ Shadow Kissing
