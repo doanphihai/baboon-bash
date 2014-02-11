@@ -21,4 +21,4 @@ end
 artist = get_info('.artist')
 title = get_info('.title')
 
-puts "    \"artist\": \"#{artist}\"\n    \"title\":\"#{title}\""
+puts "    \"artist\": \"#{artist}\"\n    \"title\": \"#{title}\""
