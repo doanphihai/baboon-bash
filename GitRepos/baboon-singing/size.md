@@ -40,5 +40,5 @@
 - [28/01/14 23h] Bill Fay ~ Screams In the Ears
 - [10/02/14 13h] Balthazar ~ Later
 - [10/02/14 14h] Hollie Cook ~ Shadow Kissing
-- [11/02/14 23h] Glass Animals ~ Black Mambo
 - [12/02/14 00h] Ornette ~ Crazy (Noze Remix)
+- [11/02/14 23h] Glass Animals ~ Black Mambo
