@@ -4,14 +4,21 @@
 *
 
 # Allow these files
+!README.md
+
+## Unix basics
 !.gitconfig
 !.bash_aliases
 !.bash_profile
 !.gitignore
 !.gitignore_global
-!README.md
-!.git-dude
-!.git-dude/Logos-Github-icon.png
+
+## Projects
 !GitRepos
 !GitRepos/baboon-singing
 !GitRepos/baboon-singing/*
+
+## Apps/Languages config
+!.gemrc
+!.git-dude
+!.git-dude/Logos-Github-icon.png
