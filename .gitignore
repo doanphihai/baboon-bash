@@ -7,9 +7,9 @@
 !README.md
 
 ## Unix basics
-!.gitconfig
 !.bash_aliases
 !.bash_profile
+!.gitconfig
 !.gitignore
 !.gitignore_global
 
@@ -20,5 +20,9 @@
 
 ## Apps/Languages config
 !.gemrc
+
 !.git-dude
 !.git-dude/Logos-Github-icon.png
+
+!.xchat2
+!.xchat2/*
