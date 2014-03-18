@@ -5,3 +5,4 @@
 - [04/02/14 11h] Mozart ~ Concerto pour piano n°23: 2è mvt R.Serkin / Orch Symph Londres / C.Abbado
 - [20/02/14 14h] Smetana ~ La Moldau Orch Philh Vienne / J.Levine
 - [12/03/14 01h] Rachmaninov ~ Concerto pour piano n°3:1er mvt A.Volodos / Orch Philh Berlin / J.Levine
+- [18/03/14 01h] Tchaïkovsky ~ Concerto pour violon:1er mvt I.Gitlis / Orch Symph Vienne / Hollreiser
