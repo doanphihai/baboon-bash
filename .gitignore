@@ -27,3 +27,7 @@
 
 !.xchat2
 !.xchat2/*
+
+!.config
+!.config/tmux
+!.config/tmux/*
