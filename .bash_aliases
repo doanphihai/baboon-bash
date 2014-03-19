@@ -122,3 +122,8 @@ source ~/GitRepos/baboon-singing/save-radios.sh
 function fplay {
     find /media/trinasse/partage/Musique/ -type f -iname "*$@*" -print0 | xargs -0 vlc;
 }
+
+if which tmux 2>&1 >/dev/null; then
+    #if not inside a tmux session, and if no session is started, start a new session
+    test -z "$TMUX" && tmux new-session
+fi
