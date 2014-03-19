@@ -16,3 +16,4 @@ Split window vertically  : C-x 2
 Next pane                : C-x o
 Grow pane                : C-x M-up/down/left/right
 Show all keys            : C-x ?
+Rotate panes             : C-x C-o
