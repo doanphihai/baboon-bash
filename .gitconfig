@@ -45,7 +45,7 @@
 	d = diff
 	unstage = reset HEAD --
 	new = !sh -c 'git gg $1@{1}..$1@{0} "$@"'
-	pull-pretty = !git pull && git new
+	pull-gg = !git pull && git new | head -n 50
 
 [core]
 	excludesfile = ~/.gitignore_global
