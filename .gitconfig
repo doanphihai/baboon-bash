@@ -44,6 +44,8 @@
 	gg = log --graph --pretty=format:'%Cred%h%Creset %Cgreen(%cr)%Creset%Cblue[%an]%Creset -%C(yellow)%d%Creset %s' --abbrev-commit --date=relative
 	d = diff
 	unstage = reset HEAD --
+	new = !sh -c 'git gg $1@{1}..$1@{0} "$@"'
+	pull-pretty = !git pull && git new
 
 [core]
 	excludesfile = ~/.gitignore_global
