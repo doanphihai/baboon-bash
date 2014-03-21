@@ -21,7 +21,9 @@ function ahead_behind {
     local merge_branch=$(git config branch."$branch".merge | cut -d / -f 3,4,5,6)
     local rev_list=$(git rev-list --left-right --count "$branch"..."$remote"/"$merge_branch")
     local behind=$(echo "$rev_list" | awk '{print $2}')
+    if [[ "$1" == "--behind" ]]; then echo "$behind" && return; fi
     local ahead=$(echo "$rev_list" | awk '{print $1}')
+    if [[ "$1" == "--ahead" ]]; then echo "$ahead" && return; fi
     local ahead_behind=""
     if [[ "$ahead" == 0 && "$behind" == 0 ]]; then
         echo ''
