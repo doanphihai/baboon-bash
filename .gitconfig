@@ -46,6 +46,7 @@
 	unstage = reset HEAD --
 	new = !sh -c 'git gg $1@{1}..$1@{0} "$@"'
 	pull-gg = !git pull && git new | head -n 50
+	push-gg = !git push && git new | head -n 50
 
 [core]
 	excludesfile = ~/.gitignore_global
