@@ -132,7 +132,13 @@ function fplay {
     find /media/trinasse/partage/Musique/ -type f -iname "*$@*" -print0 | xargs -0 vlc;
 }
 
+# TMUX
 if which tmux 2>&1 >/dev/null; then
-    #if not inside a tmux session, and if no session is started, start a new session
-    test -z "$TMUX" && tmux new-session
+    # if no session is started, start a new session
+    test -z ${TMUX} && tmux new-window
+
+    # when quitting tmux, try to attach
+    while test -z ${TMUX}; do
+        tmux attach || break
+    done
 fi
