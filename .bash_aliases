@@ -1,5 +1,8 @@
 # Custom prompt
 
+# Set to 1 to see user@host
+FULL_PROMPT=0
+
 ##-ANSI-COLOR-CODES-##
 Color_Off="\033[0m"
 ###-Regular-###
@@ -57,8 +60,12 @@ function __prompt_command()
     # debian chroot stuff (take it or leave it)
     PS1+="${debian_chroot:+($debian_chroot)}"
 
+    if [ $FULL_PROMPT -eq 1 ]; then
+        PS1+="\[$BRed\]\u\[$Color_Off\]@\[$BRed\]\h\[$Color_Off\]:"
+    fi
+
     # basic information (user@host:path)
-    PS1+="\[$BRed\]\u\[$Color_Off\]@\[$BRed\]\h\[$Color_Off\]:\[$BPurple\]\w\[$Color_Off\] "
+    PS1+="\[$BPurple\]\w\[$Color_Off\] "
 
     # check if inside git repo
     local git_status="`git status -unormal 2>&1`"
