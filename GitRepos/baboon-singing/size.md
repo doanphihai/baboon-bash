@@ -50,3 +50,4 @@
 - [08/03/14 11h] Wolf Myer Orchestra ~ Soulgate
 - [13/03/14 18h] Major Lazer ~ Get Free
 - [25/03/14 16h] Tech N9ne ~ Fragile (Ft Mayday Morgan Lamar)
+- [26/03/14 17h] Aretha Franklin ~ Runnin' Out of Fools
