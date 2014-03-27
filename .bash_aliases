@@ -142,3 +142,7 @@ if which tmux 2>&1 >/dev/null; then
         tmux attach || break
     done
 fi
+
+# Docker
+alias docker-remove-stopped-containers='docker rm $(docker ps -a -q)'
+alias docker-removed-untagged-images='docker rmi $(docker images | grep "^<none>" | awk "{print $3}")'
