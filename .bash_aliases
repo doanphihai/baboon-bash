@@ -145,4 +145,4 @@ fi
 
 # Docker
 alias docker-remove-stopped-containers='docker rm $(docker ps -a -q)'
-alias docker-removed-untagged-images='docker rmi $(docker images | grep "^<none>" | awk "{print $3}")'
+alias docker-remove-untagged-images="docker rmi $(docker images -a | grep '^<none>' | awk '{print $3}')"
