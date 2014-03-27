@@ -144,5 +144,5 @@ if which tmux 2>&1 >/dev/null; then
 fi
 
 # Docker
-alias docker-remove-stopped-containers='docker rm $(docker ps -a -q)'
-alias docker-remove-untagged-images="docker rmi $(docker images -a | grep '^<none>' | awk '{print $3}')"
+alias docker-rm-stopped-containers='docker rm $(docker ps -a -q)'
+alias docker-rm-untagged-images="docker rmi $(docker images -a | grep '^<none>' | awk '{print $3}')"
