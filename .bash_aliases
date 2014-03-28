@@ -105,7 +105,7 @@ export EDITOR='emacsclient -c -a "" -F "((fullscreen . maximized))"'
 # Aliases for emacs
 alias em-no-c='emacsclient -n -a "" -F "((fullscreen . maximized))"'
 alias em='em-no-c || em-no-c -c'
-alias kill-emacs="emacsclient -e '(kill-emacs)'"
+alias kill-emacs='emacsclient -e '\''(kill-emacs)'\'''
 
 # Bashmarks (install from https://github.com/huyng/bashmarks)
 source ~/.local/bin/bashmarks.sh
@@ -145,4 +145,4 @@ fi
 
 # Docker
 alias docker-rm-stopped-containers='docker rm $(docker ps -a -q)'
-alias docker-rm-untagged-images="docker rmi $(docker images -a | grep '^<none>' | awk '{print $3}')"
+alias docker-rm-untagged-images='docker rmi $(docker images -a | grep '\''^<none>'\'' | awk '\''{print $3}'\'')'
