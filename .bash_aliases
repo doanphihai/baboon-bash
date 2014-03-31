@@ -103,9 +103,10 @@ set -o emacs
 export EDITOR='emacsclient -c -a "" -F "((fullscreen . maximized))"'
 
 # Aliases for emacs
-alias em-no-c='emacsclient -n -a "" -F "((fullscreen . maximized))"'
-alias em='em-no-c || em-no-c -c'
-alias kill-emacs='emacsclient -e '\''(kill-emacs)'\'''
+alias e='emacsclient -n -a "" -F "((fullscreen . maximized))"'
+alias em='e || echo "Error. If no client is started, use the emc command instead"'
+alias emc='e -c'
+alias kill-emacs="emacsclient -e '(kill-emacs)'"
 
 # Bashmarks (install from https://github.com/huyng/bashmarks)
 source ~/.local/bin/bashmarks.sh
