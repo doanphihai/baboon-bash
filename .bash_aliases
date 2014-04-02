@@ -104,7 +104,7 @@ export EDITOR='emacsclient -c -a "" -F "((fullscreen . maximized))"'
 
 # Aliases for emacs
 alias e='emacsclient -n -a "" -F "((fullscreen . maximized))"'
-alias em='e || echo "Error. If no client is started, use the emc command instead"'
+alias em='e'
 alias emc='e -c'
 alias kill-emacs="emacsclient -e '(kill-emacs)'"
 
