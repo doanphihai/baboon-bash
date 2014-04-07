@@ -124,7 +124,8 @@ CLASSIQUE=http://radioclassique.ice.infomaniak.ch/radioclassique-high.mp3
 SIZE=http://size.ice.infomaniak.ch/size-128.mp3
 MEUH=http://genisse.radiomeuh.com/big.mp3
 NOVA=http://novazz.ice.infomaniak.ch/novazz-128.mp3
-alias radios='vlcncurses $SIZE $CLASSIQUE $MEUH $NOVA'
+FIP=http://mp3lg.tdf-cdn.com/fip/all/fiphautdebit.mp3
+alias radios='vlcncurses $SIZE $CLASSIQUE $MEUH $NOVA $FIP'
 
 source ~/GitRepos/baboon-singing/save-radios.sh
 
