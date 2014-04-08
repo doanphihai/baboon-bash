@@ -8,3 +8,4 @@
 - [18/03/14 01h] Tchaïkovsky ~ Concerto pour violon:1er mvt I.Gitlis / Orch Symph Vienne / Hollreiser
 - [21/03/14 14h] Barber ~ Adagio pour cordes Orch Chbre Prague / A.Hradil
 - [08/04/14 17h] Tchaïkovsky ~ Symphonie n°6 \
+- [08/04/14 17h] Chopin ~ Concerto pour piano n°2:2è mvt K.Zimerman / Orch Phil de L.A / Carlo Maria Giulini
