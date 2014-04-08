@@ -7,3 +7,4 @@
 - [12/03/14 01h] Rachmaninov ~ Concerto pour piano n°3:1er mvt A.Volodos / Orch Philh Berlin / J.Levine
 - [18/03/14 01h] Tchaïkovsky ~ Concerto pour violon:1er mvt I.Gitlis / Orch Symph Vienne / Hollreiser
 - [21/03/14 14h] Barber ~ Adagio pour cordes Orch Chbre Prague / A.Hradil
+- [08/04/14 17h] Tchaïkovsky ~ Symphonie n°6 \
