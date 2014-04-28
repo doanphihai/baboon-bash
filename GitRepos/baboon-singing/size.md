@@ -57,3 +57,4 @@
 - [09/04/14 14h] Dutch ~ Just Before The Rain
 - [11/04/14 23h] Solomun ~ Kackvogel
 - [24/04/14 15h] Morcheeba ~ Moog Island
+- [28/04/14 17h] Aloe Blacc ~ Ticking Bomb
