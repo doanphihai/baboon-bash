@@ -11,6 +11,8 @@ write-notice() {
     echo
 }
 git-pull-repo() {
+    git init
+    rm .gitkeep
     git remote add origin $1
     git pull origin master
     git branch --set-upstream-to=origin/master master
@@ -51,8 +53,6 @@ make install
 
 write-notice "Installing baboon-bash"
 cd ~
-git init
-rm .gitkeep
 git-pull-repo git@github.com:LouisKottmann/baboon-bash.git
 source ~/.bash_aliases
 
@@ -64,8 +64,6 @@ cp sample/prelude-modules.el prelude-modules.el
 
 write-notice "Installing baboon-emacs"
 cd ~/.emacs.d/personal
-git init
-rm .gitkeep
 rm -r preload/
 git-pull-repo git@github.com:LouisKottmann/baboon-emacs.git
 
