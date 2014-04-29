@@ -67,9 +67,9 @@ sudo chmod +x set_dark.sh
 
 write-notice "Fixing default shortcuts"
 # unbind SUPER key
-dconf write /org/compiz/profiles/unity/plugins/unityshell/show-launcher '""'
+sudo dconf write /org/compiz/profiles/unity/plugins/unityshell/show-launcher '""'
 # unbind ALT key
-dconf write /org/compiz/integrated/show-hud '[""]'
+sudo dconf write /org/compiz/integrated/show-hud '[""]'
 
 write-notice "Installing prelude"
 cd ~
