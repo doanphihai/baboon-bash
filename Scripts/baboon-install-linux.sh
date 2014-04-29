@@ -56,6 +56,12 @@ cd ~
 git-pull-repo git@github.com:LouisKottmann/baboon-bash.git
 source ~/.bash_aliases
 
+write-notice "Fixing default shortcuts"
+# unbind SUPER key
+dconf write /org/compiz/profiles/unity/plugins/unityshell/show-launcher '""'
+# unbind ALT key
+dconf write /org/compiz/integrated/show-hud '[""]'
+
 write-notice "Installing prelude"
 cd ~
 curl -L http://git.io/epre | sh
