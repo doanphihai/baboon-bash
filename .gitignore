@@ -19,6 +19,10 @@
 !GitRepos/baboon-singing
 !GitRepos/baboon-singing/*
 
+## Scripts
+!Scripts
+!Scripts/*
+
 ## Apps/Languages config
 !.gemrc
 
