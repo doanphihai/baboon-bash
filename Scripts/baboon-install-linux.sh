@@ -29,7 +29,7 @@ write-notice "Updating the system"
 sudo apt-get update
 sudo apt-get upgrade
 
-write-notice "Installing new programs via apt-get"
+write-notice "Installing programs via apt-get"
 sudo apt-get install -y \
      curl git-core gitg xclip \
      automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev \
