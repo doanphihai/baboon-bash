@@ -26,8 +26,8 @@ sudo add-apt-repository -y ppa:kilian/f.lux
 sudo add-apt-repository -y ppa:pi-rho/dev
 
 write-notice "Updating the system"
-sudo apt-get update
-sudo apt-get upgrade
+sudo apt-get -y update
+sudo apt-get -y upgrade
 
 write-notice "Installing programs via apt-get"
 sudo apt-get install -y \
