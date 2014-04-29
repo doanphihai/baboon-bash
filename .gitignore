@@ -36,3 +36,7 @@
 !.config
 !.config/tmux
 !.config/tmux/*
+!.config/hotkeys/synapse.hotkeys
+!.config/autostart/synapse.desktop
+!.config/synapse/config.json
+!.config/autostart/fluxgui.desktop
