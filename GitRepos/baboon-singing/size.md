@@ -58,3 +58,4 @@
 - [11/04/14 23h] Solomun ~ Kackvogel
 - [24/04/14 15h] Morcheeba ~ Moog Island
 - [28/04/14 17h] Aloe Blacc ~ Ticking Bomb
+- [29/04/14 21h] Ella Eyre ~ Deeper
