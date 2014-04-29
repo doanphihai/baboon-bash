@@ -56,6 +56,15 @@ cd ~
 git-pull-repo git@github.com:LouisKottmann/baboon-bash.git
 source ~/.bash_aliases
 
+write-notice "Configuring bash colors"
+cd ~
+eval `dircolors ~/.dircolors`
+cd tmp
+git clone https://github.com/sigurdga/gnome-terminal-colors-solarized.git
+cd gnome-terminal-solarized
+sudo chmod +x set_dark.sh
+./set_dark.sh
+
 write-notice "Fixing default shortcuts"
 # unbind SUPER key
 dconf write /org/compiz/profiles/unity/plugins/unityshell/show-launcher '""'
@@ -77,6 +86,7 @@ write-notice "Installing AG - the silver searcher"
 cd ~/tmp
 git clone git@github.com:ggreer/the_silver_searcher.git
 cd the_silver_searcher
+sudo chmod +x build.sh
 ./build.sh
 sudo make install
 
