@@ -13,6 +13,7 @@
 !.gitignore
 !.gitignore_global
 !.tmux.conf
+!.dircolors
 
 ## Projects
 !GitRepos
