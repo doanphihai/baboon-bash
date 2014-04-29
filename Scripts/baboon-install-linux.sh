@@ -10,6 +10,11 @@ write-notice() {
     echo "**************************"
     echo
 }
+git-pull-repo() {
+    git remote add origin $1
+    git pull origin master
+    git branch --set-upstream-to=origin/master master
+}
 
 write-notice "Adding ppas"
 sudo add-apt-repository -y ppa:cassou/emacs
@@ -48,7 +53,7 @@ write-notice "Installing baboon-bash"
 cd ~
 git init
 rm .gitkeep
-git pull git@github.com:LouisKottmann/baboon-bash.git
+git-pull-repo git@github.com:LouisKottmann/baboon-bash.git
 source ~/.bash_aliases
 
 write-notice "Installing prelude"
@@ -62,7 +67,7 @@ cd ~/.emacs.d/personal
 git init
 rm .gitkeep
 rm -r preload/
-git pull git@github.com:LouisKottmann/baboon-emacs.git
+git-pull-repo git@github.com:LouisKottmann/baboon-emacs.git
 
 write-notice "Installing AG - the silver searcher"
 cd ~/tmp
