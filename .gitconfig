@@ -57,5 +57,5 @@
 	icon = ~/.git-dude/Logos-Github-icon.png
 	notify-command = notify-send -t 20000 -i \"$ICON_PATH\" \"$TITLE\" \"$DESCRIPTION\"
 [color]
-	status = always
-	diff = always
+	status = auto
+	diff = auto
