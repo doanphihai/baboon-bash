@@ -36,7 +36,7 @@ get-current-song-on-radio-nova() { # Multiline
 format-for-saving() { # Artist-Track
     echo "$1"                                    | \
     awk -F'"' '{print $4}'                       | \
-    perl -i -pe 'chomp if eof'                   | \
+    perl -pe 'chomp if eof'                   | \
     sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/ ~ /g'
 }
 save-to-best-songs-list() {
