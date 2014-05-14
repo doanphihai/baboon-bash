@@ -122,6 +122,9 @@ function pse {
 function psi {
     pse "$@" | awk '{print $1}'
 }
+function psk {
+    kill -9 "$(psi "$@")"
+}
 
 # Radios
 function radio {
