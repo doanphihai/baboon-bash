@@ -119,6 +119,9 @@ alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
 function pse {
     ps -e | grep "$@"
 }
+function psi {
+    pse "$@" | awk '{print $1}'
+}
 
 # Radios
 function radio {
