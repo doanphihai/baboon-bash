@@ -115,6 +115,11 @@ source ~/.local/bin/bashmarks.sh
 alias vlcncurses='vlc --intf ncurses'
 alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
 
+# General functions
+function pse {
+    ps -e | grep "$@"
+}
+
 # Radios
 function radio {
     wget "$@" -O - | mplayer -cache-min 64 -cache 256 -
