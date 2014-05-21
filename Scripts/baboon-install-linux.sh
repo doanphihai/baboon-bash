@@ -10,11 +10,12 @@ write-notice() {
     echo "**************************"
     echo
 }
-git-pull-repo() {
+git-force-pull-repo() {
     git init
-    rm .gitkeep
-    git remote add origin "$1"
-    git pull origin master
+    git remote add origin "$@"
+    git fetch origin master
+    git reset --hard FETCH_HEAD
+    git clean -df
     git branch --set-upstream-to=origin/master master
 }
 quicklisp-eval() {
@@ -60,7 +61,7 @@ source ~/.bashrc
 
 write-notice "Installing baboon-bash"
 cd ~
-git-pull-repo git@github.com:LouisKottmann/baboon-bash.git
+git-force-pull-repo git@github.com:LouisKottmann/baboon-bash.git
 source ~/.bash_aliases
 
 write-notice "Configuring bash colors"
@@ -82,7 +83,7 @@ write-notice "Installing bananamacs"
 cd ~
 mkdir -vp .emacs.d
 cd .emacs.d
-git-pull-repo git@github.com:LouisKottmann/baboon-emacs.git
+git-force-pull-repo git@github.com:LouisKottmann/baboon-emacs.git
 
 write-notice "Installing AG - the silver searcher"
 cd ~/tmp
