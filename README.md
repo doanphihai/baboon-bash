@@ -2,7 +2,13 @@
 
 ## Installation
 
-Clone this repo into `~/`
+### Automatically, with installation (packages, baboon-emacs..)
+```bash
+curl -L http://git.io/WyWtmg | sh
+```
+
+###  Manually
+Clone this repo into `~/` then check `Scripts/baboon-install-linux.sh` to see what you want to install.
 
 ## Updating it
 
