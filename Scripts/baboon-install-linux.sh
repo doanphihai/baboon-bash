@@ -54,6 +54,10 @@ git clone git://github.com/huyng/bashmarks.git
 cd bashmarks
 make install
 
+write-notice "Fixing .bashrc"
+sed -i 's/^alias l=.\+$//' .bashrc # removes alias l so that bashmarks can work properly
+source ~/.bashrc
+
 write-notice "Installing baboon-bash"
 cd ~
 git-pull-repo git@github.com:LouisKottmann/baboon-bash.git
