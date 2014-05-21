@@ -71,15 +71,10 @@ sudo dconf write /org/compiz/profiles/unity/plugins/unityshell/show-launcher '""
 # unbind ALT key
 sudo dconf write /org/compiz/integrated/show-hud '[""]'
 
-write-notice "Installing prelude"
+write-notice "Installing bananamacs"
 cd ~
-curl -L http://git.io/epre | sh
+mkdir -vp .emacs.d
 cd .emacs.d
-cp sample/prelude-modules.el prelude-modules.el
-
-write-notice "Installing baboon-emacs"
-cd ~/.emacs.d/personal
-rm -r preload/
 git-pull-repo git@github.com:LouisKottmann/baboon-emacs.git
 
 write-notice "Installing AG - the silver searcher"
@@ -97,14 +92,8 @@ sbcl --load quicklisp.lisp --non-interactive --eval '(quicklisp-quickstart:insta
 sbcl --load quicklisp.lisp --non-interactive --eval '(ql:add-to-init-file)'
 sbcl --load quicklisp.lisp --non-interactive --eval '(ql:quickload "quicklisp-slime-helper")'
 
-write-notice "Installing prelude dependencies"
+write-notice "Installing bananamacs dependencies"
 emacs --daemon
-
-write-notice "Installing baboon emacs dependencies"
-emacsclient -e '(baboon-install-packages)'
 kill-emacs
-
-write-notice "Showing prelude modules files for modifications"
-emc ~/.emacs.d/prelude-modules.el
 
 write-notice "BABOON LINUX IS READY!"
