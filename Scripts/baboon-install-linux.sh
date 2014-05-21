@@ -13,9 +13,12 @@ write-notice() {
 git-pull-repo() {
     git init
     rm .gitkeep
-    git remote add origin $1
+    git remote add origin "$1"
     git pull origin master
     git branch --set-upstream-to=origin/master master
+}
+quicklisp-eval() {
+    sbcl --load quicklisp.lisp --non-interactive --eval "$@"
 }
 
 write-notice "Adding ppas"
@@ -88,12 +91,13 @@ sudo make install
 write-notice "Installing Quicklisp + SLIME"
 cd ~/tmp
 curl -O http://beta.quicklisp.org/quicklisp.lisp
-sbcl --load quicklisp.lisp --non-interactive --eval '(quicklisp-quickstart:install)'
-sbcl --load quicklisp.lisp --non-interactive --eval '(ql:add-to-init-file)'
-sbcl --load quicklisp.lisp --non-interactive --eval '(ql:quickload "quicklisp-slime-helper")'
+lisp-eval '(quicklisp-quickstart:install)'
+lisp-eval '(ql:add-to-init-file)'
+lisp-eval '(ql:quickload "quicklisp-slime-helper")'
 
 write-notice "Installing bananamacs dependencies"
 emacs --daemon
 kill-emacs
 
+cd ~
 write-notice "BABOON LINUX IS READY!"
