@@ -15,7 +15,6 @@ git-force-pull-repo() {
     git remote add origin "$@"
     git fetch origin master
     git reset --hard FETCH_HEAD
-    git clean -df
     git branch --set-upstream-to=origin/master master
 }
 quicklisp-eval() {
