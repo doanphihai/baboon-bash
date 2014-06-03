@@ -16,7 +16,7 @@ BPurple="\033[1;35m"
 function ahead_behind {
     local branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
     if [ $? -ne 0 ]; then
-        echo 'YADAYADA'
+        echo ''
         return
     fi
 
