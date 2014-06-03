@@ -14,7 +14,12 @@ BRed="\033[1;31m"
 BPurple="\033[1;35m"
 # set up command prompt
 function ahead_behind {
-    local branch=$(git rev-parse --abbrev-ref HEAD)
+    local branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+    if [ $? -ne 0 ]; then
+        echo 'YADAYADA'
+        return
+    fi
+
     if ( ! git config --list | grep -E ^branch."$branch" > /dev/null )
     then
         echo ''
