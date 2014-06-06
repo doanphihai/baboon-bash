@@ -77,6 +77,9 @@ show-menu() {
     esac
     return
 }
+artist() {
+    echo $(echo "$1" | head -n 1 | cut -d'"' -f4)
+}
 song() {
     # make sure we target a known radio
     if ( ! array-contains-element "$1" "${KNOWN_RADIOS[@]}" )
@@ -96,9 +99,11 @@ song() {
     # display infos on current song to the user
     echo
     echo "Radio $1"
-    local current="$(utfout "$(get-current-song-on-radio-$1)")"
-    echo "$current"
+    local current="$(get-current-song-on-radio-$1)"
+    local escaped_current="$(utfout "$current")"
+    echo "$escaped_current"
     echo
+    echo "$(song "$1" list | grep "$(artist "$escaped_current")")"
 
     # save to git-versionned file
     read -p "Would you like to save that song (y/N)?"
