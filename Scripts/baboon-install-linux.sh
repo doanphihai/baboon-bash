@@ -95,9 +95,9 @@ sudo make install
 write-notice "Installing Quicklisp + SLIME"
 cd ~/tmp
 curl -O http://beta.quicklisp.org/quicklisp.lisp
-lisp-eval '(quicklisp-quickstart:install)'
-lisp-eval '(ql:add-to-init-file)'
-lisp-eval '(ql:quickload "quicklisp-slime-helper")'
+quicklisp-eval '(quicklisp-quickstart:install)
+		(ql:add-to-init-file)
+		(ql:quickload "quicklisp-slime-helper")'
 
 write-notice "Installing bananamacs dependencies"
 emacs --daemon
