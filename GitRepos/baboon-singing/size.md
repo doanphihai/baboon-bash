@@ -32,7 +32,6 @@
 - [Vintage Size] The xx ~ Fiction (Kulkid & Fever 105 Remixx)
 - [Vintage Size] Electro Deluxe ~ Devil
 - [Vintage Size] Roger Molls ~ The Listener
-- [21/01/14 18h] Chill Bump ~ Lost In The Sound
 - [21/01/14 18h] Jean du Voyage ~ The Closest Ghost feat Djela
 - [21/01/14 22h] Emancipator ~ Good Knight
 - [21/01/14 23h] Santigold ~ Disparate Youth
