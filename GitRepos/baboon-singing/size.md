@@ -66,3 +66,4 @@
 - [16/06/14 17h] Sietta ~ No Longer Hurt
 - [18/06/14 18h] Caro Emerald ~ I Belong To You
 - [20/06/14 14h] Smashing Pumpkins ~ 1979
+- [20/06/14 14h] Dionne Bromfield Diggy Simmons ~ Yeah right
