@@ -96,6 +96,17 @@ song() {
         return
     fi
 
+    case "$2" in
+        # list saved songs
+        'list') cat "$targetFile"
+                return ;;
+        # show a randomly chosen saved song and put it in the clipboard
+        'rand') local random_song=$(song "$1" list | rl --count 1 | cut -d']' -f2-)
+                echo "$random_song" " (saved to clipboard)"
+                echo "$random_song" | xclip -sel clip
+                return ;;
+    esac
+
     # display infos on current song to the user
     echo
     echo "Radio $1"
