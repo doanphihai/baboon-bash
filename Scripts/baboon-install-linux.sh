@@ -36,7 +36,7 @@ write-notice "Installing programs via apt-get"
 sudo apt-get install -y \
      curl git-core gitg xclip \
      automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev \
-     fluxgui tmux synapse \
+     fluxgui tmux synapse wmctrl randomize-lines \
      sbcl emacs-snapshot-el emacs-snapshot-gtk emacs-snapshot
 
 write-notice "Now generating SSH key"
@@ -57,6 +57,27 @@ make install
 write-notice "Fixing .bashrc"
 sed -i 's/^alias l=.\+$//' .bashrc # removes alias l so that bashmarks can work properly
 source ~/.bashrc
+
+write-notice "Adding shortcuts (F2->F4) for terminal/emacs/firefox"
+media_keys=org.gnome.settings-daemon.plugins.media-keys
+keymap=/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/
+
+# one per custom keybinding
+gsettings set $media_keys custom-keybindings "['"$keymap"custom1/',
+                                               '"$keymap"custom2/',
+                                               '"$keymap"custom3/']"
+
+gsettings set $media_keys.custom-keybinding:"$keymap"custom1/ name "switch-to-terminal"
+gsettings set $media_keys.custom-keybinding:"$keymap"custom1/ command "wmctrl -xa terminal"
+gsettings set $media_keys.custom-keybinding:"$keymap"custom1/ binding "F2"
+
+gsettings set $media_keys.custom-keybinding:"$keymap"custom2/ name "switch-to-emacs"
+gsettings set $media_keys.custom-keybinding:"$keymap"custom2/ command "wmctrl -xa emacs"
+gsettings set $media_keys.custom-keybinding:"$keymap"custom2/ binding "F3"
+
+gsettings set $media_keys.custom-keybinding:"$keymap"custom3/ name "switch-to-firefox"
+gsettings set $media_keys.custom-keybinding:"$keymap"custom3/ command "wmctrl -xa firefox"
+gsettings set $media_keys.custom-keybinding:"$keymap"custom3/ binding "F4"
 
 write-notice "Installing baboon-bash"
 cd ~
