@@ -74,9 +74,9 @@ sudo chmod +x set_dark.sh
 
 write-notice "Fixing default shortcuts"
 # unbind SUPER key
-sudo dconf write /org/compiz/profiles/unity/plugins/unityshell/show-launcher '""'
+dconf write /org/compiz/profiles/unity/plugins/unityshell/show-launcher '""'
 # unbind ALT key
-sudo dconf write /org/compiz/integrated/show-hud '[""]'
+dconf write /org/compiz/integrated/show-hud '[""]'
 
 write-notice "Installing bananamacs"
 cd ~
