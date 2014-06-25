@@ -68,3 +68,4 @@
 - [20/06/14 14h] Dionne Bromfield Diggy Simmons ~ Yeah right
 - [20/06/14 16h] Marian Hill ~ Lovit
 - [23/06/14 15h] Krystian Shek ~ Destroy and Rebuild V1
+- [25/06/14 16h] Emiliana Torrini ~ Jungle Drum
