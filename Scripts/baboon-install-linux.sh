@@ -22,7 +22,7 @@ quicklisp-eval() {
 }
 
 write-notice "Adding ppas"
-sudo add-apt-repository -y ppa:cassou/emacs
+sudo add-apt-repository -y ppa:ubuntu-elisp/ppa
 sudo add-apt-repository -y ppa:synapse-core/testing
 sudo add-apt-repository -y ppa:ubuntu-mozilla-daily/firefox-aurora
 sudo add-apt-repository -y ppa:kilian/f.lux
@@ -37,7 +37,7 @@ sudo apt-get install -y \
      curl git-core gitg xclip \
      automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev \
      fluxgui tmux synapse wmctrl randomize-lines \
-     sbcl emacs-snapshot-el emacs-snapshot-gtk emacs-snapshot
+     sbcl emacs-snapshot-el emacs-snapshot
 
 write-notice "Now generating SSH key"
 cd ~
