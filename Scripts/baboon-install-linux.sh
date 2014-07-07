@@ -120,6 +120,7 @@ write-notice "Installing Quicklisp + SLIME"
 cd ~/tmp
 curl -O http://beta.quicklisp.org/quicklisp.lisp
 sbcl --non-interactive \
+     --noprint \
      --load quicklisp.lisp \
      --eval '(quicklisp-quickstart:install)' \
      --eval '(ql:add-to-init-file)' \
