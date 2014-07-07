@@ -17,9 +17,6 @@ git-force-pull-repo() {
     git reset --hard FETCH_HEAD
     git branch --set-upstream-to=origin/master master
 }
-quicklisp-eval() {
-    sbcl --load quicklisp.lisp --non-interactive --eval "$@"
-}
 
 write-notice "Adding ppas"
 sudo add-apt-repository -y ppa:ubuntu-elisp/ppa
@@ -122,9 +119,11 @@ chmod +x checkMuzei.sh MuzeiBash.sh
 write-notice "Installing Quicklisp + SLIME"
 cd ~/tmp
 curl -O http://beta.quicklisp.org/quicklisp.lisp
-quicklisp-eval '(quicklisp-quickstart:install)
-		(ql:add-to-init-file)
-		(ql:quickload "quicklisp-slime-helper")'
+sbcl --non-interactive \
+     --load quicklisp.lisp \
+     --eval '(quicklisp-quickstart:install)' \
+     --eval '(ql:add-to-init-file)' \
+     --eval '(ql:quickload "quicklisp-slime-helper")'
 
 write-notice "Installing bananamacs dependencies"
 emacs --daemon
