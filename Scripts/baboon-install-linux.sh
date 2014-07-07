@@ -34,7 +34,7 @@ sudo apt-get -y upgrade
 
 write-notice "Installing programs via apt-get"
 sudo apt-get install -y \
-     curl git-core gitg xclip \
+     curl git-core gitg xclip jq \
      automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev \
      fluxgui tmux synapse wmctrl randomize-lines \
      sbcl emacs-snapshot-el emacs-snapshot
@@ -112,6 +112,12 @@ cd the_silver_searcher
 sudo chmod +x build.sh
 ./build.sh
 sudo make install
+
+write-notice "Setting up Muzei"
+cd ~/GitRepos/Muzei-Bash/
+chmod +x checkMuzei.sh MuzeiBash.sh
+# every day at 11am
+{ crontab -l; echo "00 11 * * * /home/louis/GitRepos/Muzei-Bash/checkMuzei.sh"; } | crontab -
 
 write-notice "Installing Quicklisp + SLIME"
 cd ~/tmp

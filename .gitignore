@@ -20,6 +20,11 @@
 !GitRepos/baboon-singing
 !GitRepos/baboon-singing/*
 
+!GitRepos/Muzei-Bash
+!GitRepos/Muzei-Bash/checkMuzei.sh
+!GitRepos/Muzei-Bash/MuzeiBash.sh
+!GitRepos/Muzei-Bash/README.md
+
 ## Scripts
 !Scripts
 !Scripts/*
