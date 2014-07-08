@@ -114,7 +114,7 @@ write-notice "Setting up Muzei"
 cd ~/GitRepos/Muzei-Bash/
 chmod +x checkMuzei.sh MuzeiBash.sh
 # every day at 11am
-{ crontab -l; echo "00 11 * * * /home/louis/GitRepos/Muzei-Bash/checkMuzei.sh"; } | crontab -
+{ crontab -l; echo "00 11 * * * $(whoami) /home/$(whoami)/GitRepos/Muzei-Bash/checkMuzei.sh"; } | crontab -
 
 write-notice "Installing Quicklisp + SLIME"
 cd ~/tmp
