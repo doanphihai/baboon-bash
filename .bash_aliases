@@ -170,3 +170,6 @@ alias docker-rm-untagged-images='docker rmi $(docker images -a | grep '\''^<none
 function docker-ip-for {
     docker inspect "$@" | grep IPAddress | cut -d'"' -f4
 }
+
+# ranger
+alias ranger='EDITOR=nano ranger'

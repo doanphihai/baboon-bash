@@ -31,7 +31,8 @@ sudo apt-get -y upgrade
 
 write-notice "Installing programs via apt-get"
 sudo apt-get install -y \
-     curl git-core gitg xclip jq \
+     curl git-core gitg xclip jq tree caca-utils lynx poppler mediainfo \
+     highlight atool ranger \
      automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev \
      fluxgui tmux synapse wmctrl randomize-lines \
      sbcl emacs-snapshot-el emacs-snapshot
