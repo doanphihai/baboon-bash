@@ -8,7 +8,8 @@ cd $muzeiDir
 
 if ! [ -f ./muzeich.json ]
 then
-    echo "First use <3 fetching latest Muzei metadatas..."
+    echo "First use <3"
+    echo "fetching latest Muzei metadatas..."
     curl -s -o muzeich.json 'https://muzeiapi.appspot.com/featured?cachebust=1'
     ~/GitRepos/Muzei-Bash/MuzeiBash.sh
 else
