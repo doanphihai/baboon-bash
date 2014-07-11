@@ -8,13 +8,18 @@ cd $muzeiDir
 
 if ! [ -f ./muzeich.json ]
 then
-  curl -o muzeich.json 'https://muzeiapi.appspot.com/featured?cachebust=1'
-  ~/GitRepos/Muzei-Bash/MuzeiBash.sh
+    echo "First use <3 fetching latest Muzei metadatas..."
+    curl -s -o muzeich.json 'https://muzeiapi.appspot.com/featured?cachebust=1'
+    ~/GitRepos/Muzei-Bash/MuzeiBash.sh
 else
-  curl -o muzeich2.json 'https://muzeiapi.appspot.com/featured?cachebust=1'
-  if [ "$(cat muzeich.json)" != "$(cat muzeich2.json)" ]
+    echo "Fetching latest Muzei metadatas..."
+    curl -s -o muzeich2.json 'https://muzeiapi.appspot.com/featured?cachebust=1'
+    if [ "$(cat muzeich.json)" != "$(cat muzeich2.json)" ]
     then
-      mv muzeich2.json muzeich.json
-      ~/GitRepos/Muzei-Bash/MuzeiBash.sh
-  fi
+        echo "New wallpaper found!"
+        mv muzeich2.json muzeich.json
+        ~/GitRepos/Muzei-Bash/MuzeiBash.sh
+    else
+        echo "Wallpaper is already up to date!"
+    fi
 fi

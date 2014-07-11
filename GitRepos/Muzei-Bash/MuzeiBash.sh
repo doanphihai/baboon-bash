@@ -46,7 +46,7 @@ then
 fi
 
 ######Get the Muzei JSON and parse it######
-curl -o muzei.json 'https://muzeiapi.appspot.com/featured?cachebust=1'
+curl -s -o muzei.json 'https://muzeiapi.appspot.com/featured?cachebust=1'
 imageUri=`jq '.imageUri' $muzeiDir/muzei.json | sed s/\"//g`
 imageFile=`basename $imageUri`
 title=`jq '.title' $muzeiDir/muzei.json | sed s/\"//g`
@@ -59,7 +59,7 @@ then
   echo "File $imageFile exists."
 else
   echo "File $imageFile does not exist, downloading..."
-  curl -O $imageUri
+  curl -s -O $imageUri
 fi
 
 ######Functions for autostarting feh, hsetroot and nitrogen######
@@ -136,7 +136,7 @@ then
   echo "Logo already exists."
 else
   echo "Logo doesn't exist, downloading..."
-  curl -O "https://raw.github.com/Feminist-Software-Foundation/Muzei-Bash/master/MuzeiLogo.png"
+  curl -s -O "https://raw.github.com/Feminist-Software-Foundation/Muzei-Bash/master/MuzeiLogo.png"
 fi
 case "$OSTYPE" in
   linux* | *BSD*) notify-send "New wallpaper: '$title'" "$byline" -i $muzeiDir/MuzeiLogo.png ;;
