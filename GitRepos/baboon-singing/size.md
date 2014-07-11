@@ -70,3 +70,4 @@
 - [23/06/14 15h] Krystian Shek ~ Destroy and Rebuild V1
 - [25/06/14 16h] Emiliana Torrini ~ Jungle Drum
 - [10/07/14 19h] L'Orange ~ The Real McCoy feat Has-Lo
+- [11/07/14 16h] Guts ~ Mi isla tropical
