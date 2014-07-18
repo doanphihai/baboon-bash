@@ -74,3 +74,4 @@
 - [11/07/14 18h] Flume ~ What You Need
 - [11/07/14 18h] Joelistics ~ Days
 - [12/07/14 01h] The Nextmen ~ Burn
+- [18/07/14 17h] ProleteR ~ April Showers
