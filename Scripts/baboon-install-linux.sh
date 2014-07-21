@@ -133,3 +133,14 @@ kill-emacs
 
 cd ~
 write-notice "BABOON LINUX IS READY!"
+
+# To be scripted:
+
+##Move current window to next monitor:
+### Open CCSM
+### Enable "Put"
+### Configure it:
+###        - "Put To Previous Output: C-s-KP4"
+###        - "Put To Next Output: C-s-KP6"
+###        -  disable everything else
+###        -  speed up the animation (10 seems fine)
