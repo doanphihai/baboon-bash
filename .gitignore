@@ -45,3 +45,5 @@
 !.config/autostart/synapse.desktop
 !.config/synapse/config.json
 !.config/autostart/fluxgui.desktop
+!.config/ranger
+!.config/ranger/rc.conf
