@@ -96,6 +96,8 @@ write-notice "Fixing default shortcuts"
 dconf write /org/compiz/profiles/unity/plugins/unityshell/show-launcher '""'
 # unbind ALT key
 dconf write /org/compiz/integrated/show-hud '[""]'
+# unbind ALT+Space key
+dconf write /org/gnome/desktop/wm/keybindings/activate-window-menu '[""]'
 
 write-notice "Installing bananamacs"
 cd ~
