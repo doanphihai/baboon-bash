@@ -31,7 +31,7 @@ sudo apt-get -y upgrade
 
 write-notice "Installing programs via apt-get"
 sudo apt-get install -y \
-     curl git-core gitg xclip jq tree caca-utils lynx poppler mediainfo \
+     curl git-core gitg xclip jq tree caca-utils lynx poppler-utils mediainfo \
      highlight atool ranger \
      automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev \
      fluxgui tmux synapse wmctrl randomize-lines \
@@ -53,8 +53,10 @@ cd bashmarks
 make install
 
 write-notice "Fixing .bashrc"
+cd ~
 sed -i 's/^alias l=.\+$//' .bashrc # removes alias l so that bashmarks can work properly
 source ~/.bashrc
+unalias l
 
 write-notice "Adding shortcuts (F2->F4) for terminal/emacs/firefox"
 media_keys=org.gnome.settings-daemon.plugins.media-keys
@@ -87,7 +89,7 @@ cd ~
 eval `dircolors ~/.dircolors`
 cd tmp
 git clone https://github.com/sigurdga/gnome-terminal-colors-solarized.git
-cd gnome-terminal-solarized
+cd gnome-terminal-colors-solarized
 sudo chmod +x set_dark.sh
 ./set_dark.sh
 
