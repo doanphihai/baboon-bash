@@ -24,6 +24,7 @@ sudo add-apt-repository -y ppa:synapse-core/testing
 sudo add-apt-repository -y ppa:ubuntu-mozilla-daily/firefox-aurora
 sudo add-apt-repository -y ppa:kilian/f.lux
 sudo add-apt-repository -y ppa:pi-rho/dev
+sudo add-apt-repository -y ppa:jon-severinsson/ffmpeg
 
 write-notice "Updating the system"
 sudo apt-get -y update
@@ -32,7 +33,7 @@ sudo apt-get -y upgrade
 write-notice "Installing programs via apt-get"
 sudo apt-get install -y \
      curl git-core gitg xclip jq tree caca-utils lynx poppler-utils mediainfo \
-     highlight atool ranger \
+     highlight atool ranger mplayer ffmpeg \
      automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev \
      fluxgui tmux synapse wmctrl randomize-lines \
      sbcl emacs-snapshot-el emacs-snapshot
