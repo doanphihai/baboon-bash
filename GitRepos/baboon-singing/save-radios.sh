@@ -1,7 +1,19 @@
 #!/bin/bash
 
 GIT_BEST_SONGS_REPO=$HOME/GitRepos/baboon-singing
-KNOWN_RADIOS=('classique' 'size' 'nova')
+KNOWN_RADIOS=('classique' 'size' 'nova' 'fip')
+
+# Radios
+function radio {
+    wget "$@" -O - | mplayer -cache-min 64 -cache 256 -
+}
+### Urls
+CLASSIQUE=http://radioclassique.ice.infomaniak.ch/radioclassique-high.mp3
+SIZE=http://size.ice.infomaniak.ch/size-128.mp3
+MEUH=http://genisse.radiomeuh.com/big.mp3
+NOVA=http://novazz.ice.infomaniak.ch/novazz-128.mp3
+FIP=http://mp3lg.tdf-cdn.com/fip/all/fiphautdebit.mp3
+alias radios='vlcncurses $SIZE $CLASSIQUE $MEUH $NOVA $FIP'
 
 get-current-song-on-radio-classique() { # Multiline
     curl -s 'http://www.radioclassique.fr/typo3temp/init_player_low.json'  | \
@@ -89,12 +101,6 @@ song() {
     fi
 
     local targetFile=$GIT_BEST_SONGS_REPO/$1.md
-
-    if [[ "$2" == "list" ]]; then
-        # list saved songs
-        cat "$targetFile"
-        return
-    fi
 
     case "$2" in
         # list saved songs
