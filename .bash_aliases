@@ -160,6 +160,7 @@ fi
 # Docker
 alias docker-rm-stopped-containers='docker rm $(docker ps -a -q)'
 alias docker-rm-untagged-images='docker rmi $(docker images -a | grep '\''^<none>'\'' | awk '\''{print $3}'\'')'
+alias docker-ps-short='docker ps -q | xargs -I {} bash -lc "docker ps -a | grep {} | sed '\''s/\(  \+\)/\1?/g'\'' | cut -d'\''?'\'' -f2,5,7 | tr -d '\''?'\''"'
 
 function docker-ip-for {
     docker inspect "$@" | grep IPAddress | cut -d'"' -f4
