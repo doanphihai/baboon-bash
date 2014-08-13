@@ -111,6 +111,11 @@ song() {
                 echo "$random_song" " (saved to clipboard)"
                 echo "$random_song" | xclip -sel clip
                 return ;;
+        # start playing the radio without outputting anything
+        'listen') local radio_name=$(echo $1 | tr '[:lower:]' '[:upper:]')
+                  local radio_url=${!radio_name}
+                  radio "$radio_url" >/dev/null 2&>1 &
+                  return ;;
     esac
 
     # display infos on current song to the user
