@@ -149,10 +149,10 @@ function fplay {
 # TMUX
 if ! [[ -n $SSH_CLIENT ]]
 then
-    read -p "Start tmux? (Y/n): "
-    if ! [[ "$REPLY" == "n" ]] 
-    then
-        if which tmux 2>&1 >/dev/null; then
+    if which tmux 2>&1 >/dev/null; then
+        read -p "Start tmux? (Y/n): "
+        if ! [[ "$REPLY" == "n" ]] 
+        then
             # if no session is started, start a new session
             test -z ${TMUX} && (tmux new-window || tmux new-session -n 'jungle')
 
