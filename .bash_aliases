@@ -149,18 +149,22 @@ function fplay {
 # TMUX
 if ! [[ -n $SSH_CLIENT ]]
 then
-    if which tmux 2>&1 >/dev/null; then
-        read -p "Start tmux? (Y/n): "
-        if ! [[ "$REPLY" == "n" ]] 
+    if which tmux 2>&1 >/dev/null
+    then
+        # if no session is started, start a new session
+        if test -z ${TMUX}
         then
-            # if no session is started, start a new session
-            test -z ${TMUX} && (tmux new-window || tmux new-session -n 'jungle')
-
-            # when quitting tmux, try to attach
-            while test -z ${TMUX}; do
-                tmux attach || break
-            done
+            read -p "Start tmux? (Y/n): "
+            if ! [[ "$REPLY" == "n" ]] 
+            then
+                (tmux new-window || tmux new-session -n 'jungle')
+            fi
         fi
+
+        # when quitting tmux, try to attach
+        while test -z ${TMUX}; do
+            tmux attach || break
+        done
     fi
 fi
 
