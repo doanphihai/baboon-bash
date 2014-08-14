@@ -135,6 +135,9 @@ function psi {
 function psk {
     kill -9 "$(psi "$@")"
 }
+function fullpath {
+    readlink -f "$@"
+}
 
 source ~/GitRepos/baboon-singing/save-radios.sh
 
