@@ -155,16 +155,16 @@ then
         if test -z ${TMUX}
         then
             read -p "Start tmux? (Y/n): "
-            if ! [[ "$REPLY" == "n" ]] 
+            if ! [[ "$REPLY" = "n" ]] 
             then
                 (tmux new-window || tmux new-session -n 'jungle')
+
+	        # when quitting tmux, try to attach
+	        while test -z ${TMUX}; do
+        	    tmux attach || break
+	        done
             fi
         fi
-
-        # when quitting tmux, try to attach
-        while test -z ${TMUX}; do
-            tmux attach || break
-        done
     fi
 fi
 
