@@ -33,6 +33,7 @@ sudo apt-get -y upgrade
 write-notice "Installing programs via apt-get"
 sudo apt-get install -y \
      curl git-core gitg xclip jq tree caca-utils lynx poppler-utils mediainfo \
+     utfout \
      highlight atool ranger mplayer ffmpeg \
      automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev \
      fluxgui tmux synapse wmctrl randomize-lines \
