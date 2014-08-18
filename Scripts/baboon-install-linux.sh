@@ -137,6 +137,13 @@ write-notice "Installing bananamacs dependencies"
 emacs --daemon
 kill-emacs
 
+write-notice "Installing shellcheck"
+sudo apt-get -y install cabal
+cabal update
+cabal install cabal-install
+cabal install shellcheck
+echo "export PATH=$PATH:$HOME/.cabal/bin" >> "$HOME"/.bashrc
+
 cd ~
 write-notice "BABOON LINUX IS READY!"
 
