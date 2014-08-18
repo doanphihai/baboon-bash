@@ -147,7 +147,8 @@ echo "export PATH=$PATH:$HOME/.cabal/bin" >> "$HOME"/.bashrc
 cd ~
 write-notice "BABOON LINUX IS READY!"
 
-# To be scripted:
+#TODO:
+# 1 - To be scripted:
 
 ##Move current window to next monitor:
 ### Open CCSM
@@ -157,3 +158,9 @@ write-notice "BABOON LINUX IS READY!"
 ###        - "Put To Next Output: C-s-KP6"
 ###        -  disable everything else
 ###        -  speed up the animation (10 seems fine)
+
+# 2 - v2.0
+### make write-notice ask before installing:
+###        - wrap each install procedure in `function <name> { ... }'
+###        - add parameter to write-notice with the function name
+###        - dynamically call the function if it's ok to install
