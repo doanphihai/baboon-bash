@@ -42,7 +42,7 @@ get-current-song-on-radio-size() { # Multiline
     sed -s 's/,//g'
 }
 get-current-song-on-radio-nova() { # Multiline
-    ruby $GIT_BEST_SONGS_REPO/nova.rb
+    ruby "$GIT_BEST_SONGS_REPO"/nova.rb
 }
 
 format-for-saving() { # Artist-Track
@@ -54,7 +54,7 @@ format-for-saving() { # Artist-Track
 save-to-best-songs-list() {
     local formattedSongRef="$2"
     local targetFile="$1"
-    echo "-" $(date +"[%d/%m/%y %Hh]") $formattedSongRef >> $targetFile
+    echo "-" "$(date +"[%d/%m/%y %Hh]")" "$formattedSongRef" >> "$targetFile"
 }
 array-contains-element() {
     local e
@@ -90,7 +90,7 @@ show-menu() {
     return
 }
 artist() {
-    echo $(echo "$1" | head -n 1 | cut -d'"' -f4)
+    echo "$1" | head -n 1 | cut -d'"' -f4
 }
 song() {
     # make sure we target a known radio
@@ -112,20 +112,20 @@ song() {
                 echo "$random_song" | xclip -sel clip
                 return ;;
         # start playing the radio without outputting anything
-        'listen') local radio_name=$(echo $1 | tr '[:lower:]' '[:upper:]')
+        'listen'|'play') local radio_name=$(echo "$1" | tr '[:lower:]' '[:upper:]')
                   local radio_url=${!radio_name}
-                  radio "$radio_url" >/dev/null 2&>1 &
+                  radio "$radio_url" >/dev/null 2>&1 &
                   return ;;
     esac
 
     # display infos on current song to the user
     echo
     echo "Radio $1"
-    local current="$(get-current-song-on-radio-$1)"
+    local current="$(get-current-song-on-radio-"$1")"
     local escaped_current="$(utfout "$current")"
     echo "$escaped_current"
     echo
-    echo "$(song "$1" list | grep "$(artist "$escaped_current")")"
+    song "$1" list | grep "$(artist "$escaped_current")"
 
     # save to git-versionned file
     read -p "Would you like to save that song (y/N)?"
