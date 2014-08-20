@@ -75,7 +75,7 @@ function __prompt_command()
     PS1+="\[$BPurple\]\w\[$Color_Off\] "
 
     # check if inside git repo
-    local git_status="`git status -unormal 2>&1`"
+    local git_status="$(git status -unormal 2>&1)"
     if ! [[ "$git_status" =~ Not\ a\ git\ repo ]]; then
         # parse the porcelain output of git status
         if [[ "$git_status" =~ nothing\ to\ commit ]]; then
@@ -90,7 +90,7 @@ function __prompt_command()
             branch=${BASH_REMATCH[1]}
         else
             # Detached HEAD. (branch=HEAD is a faster alternative.)
-            branch="(`git describe --all --contains --abbrev=4 HEAD 2> /dev/null || echo HEAD`)"
+            branch="($(git describe --all --contains --abbrev=4 HEAD 2> /dev/null || echo HEAD))"
         fi
 
         # add the result to prompt
@@ -149,18 +149,18 @@ function fplay {
 # TMUX
 if ! [[ -n $SSH_CLIENT ]]
 then
-    if which tmux 2>&1 >/dev/null
+    if which tmux >/dev/null 2>&1
     then
         # if no session is started, start a new session
-        if test -z ${TMUX}
+        if test -z "${TMUX}"
         then
             read -p "Start tmux? (Y/n): "
-            if ! [[ "$REPLY" = "n" ]] 
+            if ! [[ "$REPLY" = "n" ]]
             then
                 (tmux new-window || tmux new-session -n 'jungle')
 
 	        # when quitting tmux, try to attach
-	        while test -z ${TMUX}; do
+	        while test -z "${TMUX}"; do
         	    tmux attach || break
 	        done
             fi
