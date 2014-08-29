@@ -33,7 +33,7 @@ sudo apt-get -y upgrade
 write-notice "Installing programs via apt-get"
 sudo apt-get install -y \
      curl git-core gitg xclip jq tree caca-utils lynx poppler-utils mediainfo \
-     utfout \
+     utfout libncurses5-dev libncursesw5-dev \
      highlight atool ranger mplayer ffmpeg \
      automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev \
      fluxgui tmux synapse wmctrl randomize-lines \
@@ -143,6 +143,13 @@ cabal update
 cabal install cabal-install
 cabal install shellcheck
 echo "export PATH=$PATH:$HOME/.cabal/bin" >> "$HOME"/.bashrc
+
+write-notice "Installing cv"
+cd ~/GitRepos
+git clone git@github.com:Xfennec/cv.git
+cd cv
+make
+sudo make install
 
 cd ~
 write-notice "BABOON LINUX IS READY!"
