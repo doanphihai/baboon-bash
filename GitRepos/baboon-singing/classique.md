@@ -10,3 +10,4 @@
 - [08/04/14 17h] Tchaïkovsky ~ Symphonie n°6 \
 - [08/04/14 17h] Chopin ~ Concerto pour piano n°2:2è mvt K.Zimerman / Orch Phil de L.A / Carlo Maria Giulini
 - [16/07/14 01h] Gershwin ~ Rhapsody in Blue Orch Philh Los Angeles / M.Tilson Thomas
+- [11/09/14 15h] Mozart ~ Symphonie n\u00b025: 1er mvt  Concentus Mus. Vienne / Harnoncourt
