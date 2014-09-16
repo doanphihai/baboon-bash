@@ -25,6 +25,7 @@ sudo add-apt-repository -y ppa:ubuntu-mozilla-daily/firefox-aurora
 sudo add-apt-repository -y ppa:kilian/f.lux
 sudo add-apt-repository -y ppa:pi-rho/dev
 sudo add-apt-repository -y ppa:jon-severinsson/ffmpeg
+sudo add-apt-repository -y ppa:moka/stable
 
 write-notice "Updating the system"
 sudo apt-get -y update
@@ -34,10 +35,14 @@ write-notice "Installing programs via apt-get"
 sudo apt-get install -y \
      curl git-core gitg xclip jq tree caca-utils lynx poppler-utils mediainfo \
      utfout libncurses5-dev libncursesw5-dev \
+     moka-icon-theme faba-mono-icons \
      highlight atool ranger mplayer ffmpeg \
      automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev \
      fluxgui tmux synapse wmctrl randomize-lines \
      sbcl emacs-snapshot-el emacs-snapshot
+
+write-notice "Setting Theme"
+gsettings set org.gnome.desktop.interface icon-theme "Faba-mono" # <- not sure if that works, can always use "Unity Tweak"
 
 write-notice "Now generating SSH key"
 cd ~
