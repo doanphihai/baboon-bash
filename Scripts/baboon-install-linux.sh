@@ -176,3 +176,5 @@ write-notice "BABOON LINUX IS READY!"
 ###        - wrap each install procedure in `function <name> { ... }'
 ###        - add parameter to write-notice with the function name
 ###        - dynamically call the function if it's ok to install
+
+# Offer to install Krita
