@@ -143,7 +143,7 @@ source ~/GitRepos/baboon-singing/save-radios.sh
 
 # Music
 function fplay {
-    find /media/trinasse/partage/Musique/ -type f -iname "*$@*" -print0 | xargs -0 vlc;
+    find /mnt/trinasse/partage/Musique/ -type f -iname "*$@*" -print0 | xargs -0 vlc;
 }
 
 # TMUX
