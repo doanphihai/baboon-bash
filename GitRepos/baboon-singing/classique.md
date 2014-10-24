@@ -13,3 +13,4 @@
 - [11/09/14 15h] Mozart ~ Symphonie n\u00b025: 1er mvt  Concentus Mus. Vienne / Harnoncourt
 - [12/09/14 04h] Saint-Sa\u00ebns ~ Symphonie n\u00b0 3 \
 - [24/10/14 21h] Beethoven ~ Sonate pour piano n\u00b0 8 \
+- [24/10/14 21h] Beethoven ~ Sonate pour piano n\u00b0 8 \
