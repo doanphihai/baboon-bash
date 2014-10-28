@@ -33,7 +33,8 @@ sudo apt-get -y upgrade
 
 write-notice "Installing programs via apt-get"
 sudo apt-get install -y \
-     curl git-core gitg xclip jq tree caca-utils lynx poppler-utils mediainfo \
+     curl git-core gitg xclip jq tree caca-utils lynx poppler-utils
+     mediainfo wmctrl \
      utfout libncurses5-dev libncursesw5-dev \
      moka-icon-theme faba-mono-icons \
      highlight atool ranger mplayer ffmpeg \
