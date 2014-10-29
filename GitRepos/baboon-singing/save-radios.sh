@@ -1,7 +1,7 @@
 #!/bin/bash
 
 GIT_BEST_SONGS_REPO=$HOME/GitRepos/baboon-singing
-KNOWN_RADIOS=('classique' 'size' 'nova' 'fip')
+KNOWN_RADIOS=('classique' 'size' 'nova' 'fip' 'meuh')
 
 # Radios
 function radio {
@@ -43,6 +43,10 @@ get-current-song-on-radio-size() { # Multiline
 }
 get-current-song-on-radio-nova() { # Multiline
     ruby "$GIT_BEST_SONGS_REPO"/nova.rb
+}
+
+get-current-song-on-radio-meuh() { # Multiline
+    ruby "$GIT_BEST_SONGS_REPO"/meuh.rb
 }
 
 format-for-saving() { # Artist-Track
