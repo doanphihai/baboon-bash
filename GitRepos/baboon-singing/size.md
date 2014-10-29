@@ -80,3 +80,4 @@
 - [29/07/14 22h] Scratch Bandit Crew ~ I got you
 - [01/10/14 13h] Bethurum ~ Nobody
 - [11/10/14 14h] Flowering Inferno ~ Cuidad del Swing
+- [29/10/14 15h] Bobby Womack ~ Stupid
