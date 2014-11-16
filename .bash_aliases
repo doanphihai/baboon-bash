@@ -107,7 +107,7 @@ PROMPT_COMMAND=__prompt_command
 set -o emacs
 
 # Make emacs the default editor
-export EDITOR='emacsclient -c -a "" -F "((fullscreen . maximized))"'
+export EDITOR='temacs -q'
 
 # Aliases for emacs
 alias e='emacsclient -n -a "" -F "((fullscreen . maximized))"'
