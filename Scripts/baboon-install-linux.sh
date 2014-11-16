@@ -19,7 +19,6 @@ git-force-pull-repo() {
 }
 
 write-notice "Adding ppas"
-sudo add-apt-repository -y ppa:ubuntu-elisp/ppa
 sudo add-apt-repository -y ppa:synapse-core/testing
 sudo add-apt-repository -y ppa:ubuntu-mozilla-daily/firefox-aurora
 sudo add-apt-repository -y ppa:kilian/f.lux
@@ -40,7 +39,7 @@ sudo apt-get install -y \
      highlight atool ranger mplayer ffmpeg \
      automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev \
      fluxgui tmux synapse wmctrl randomize-lines \
-     sbcl emacs-snapshot-el emacs-snapshot
+     sbcl
 
 write-notice "Setting Theme"
 gsettings set org.gnome.desktop.interface icon-theme "Faba-mono" # <- not sure if that works, can always use "Unity Tweak"
@@ -110,6 +109,25 @@ dconf write /org/compiz/integrated/show-hud '[""]'
 dconf write /org/gnome/desktop/wm/keybindings/activate-window-menu '[""]'
 
 write-notice "Installing bananamacs"
+cd ~
+mkdir Tools
+cd Tools
+wget http://ftp.gnu.org/gnu/emacs/emacs-24.4.tar.gz
+aunpack -X emacs emacs-24.4.tar.gz
+cp -r emacs temacs
+# Make regular Emacs
+cd emacs
+make -s maintainer-clean
+export CC=gcc CXX=g++; ../configure --prefix=/usr/local  --with-x-toolkit=gtk3 --with-wide-int  && make -s bootstrap
+sudo make -s install
+# Mame Emacs for terminal use
+cd ~/Tools/temacs
+./autogen.sh
+mkdir build
+cd build
+export CC=gcc CXX=g++; ../configure --prefix=/usr/local --program-prefix=t --without-all --without-x --with-wide-int --with-xml2 && make -s bootstrap
+sudo make -s install
+# Set up .emacs.d
 cd ~
 mkdir -vp .emacs.d
 cd .emacs.d
