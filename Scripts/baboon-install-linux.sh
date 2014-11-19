@@ -20,7 +20,6 @@ git-force-pull-repo() {
 
 write-notice "Adding ppas"
 sudo add-apt-repository -y ppa:synapse-core/testing
-sudo add-apt-repository -y ppa:ubuntu-mozilla-daily/firefox-aurora
 sudo add-apt-repository -y ppa:kilian/f.lux
 sudo add-apt-repository -y ppa:pi-rho/dev
 sudo add-apt-repository -y ppa:jon-severinsson/ffmpeg
@@ -40,6 +39,17 @@ sudo apt-get install -y \
      automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev \
      fluxgui tmux synapse wmctrl randomize-lines \
      sbcl
+
+write-notice "Swap to firefox developer edition"
+sudo apt-get remove -y firefox
+cd ~/tmp
+FIREFOX_DEV_ED_VERSION="35.0a2"
+FIREFOX_DEV_ED_FULLNAME="firefox-${FIREFOX_DEV_ED_VERSION}.en-US.linux-x86_64"
+FIREFOX_DEV_ED_URL="https://download-installer.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-aurora/${FIREFOX_DEV_ED_FULLNAME}.tar.bz2"
+curl -LO "$FIREFOX_DEV_ED_URL"
+aunpack "$FIREFOX_DEV_ED_FULLNAME"
+sudo ln -s firefox/firefox /usr/bin/firefox
+cd ~
 
 write-notice "Setting Theme"
 gsettings set org.gnome.desktop.interface icon-theme "Faba-mono" # <- not sure if that works, can always use "Unity Tweak"
