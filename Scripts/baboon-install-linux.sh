@@ -18,6 +18,8 @@ git-force-pull-repo() {
     git branch --set-upstream-to=origin/master master
 }
 
+cd ~
+
 write-notice "Adding ppas"
 sudo add-apt-repository -y ppa:synapse-core/testing
 sudo add-apt-repository -y ppa:kilian/f.lux
@@ -184,6 +186,9 @@ git clone git@github.com:Xfennec/cv.git
 cd cv
 make
 sudo make install
+
+echo "https://krita.org/download/krita-desktop/" | xclip -sel clip
+write-notice "Url to install Krita has been saved to clipboard"
 
 cd ~
 write-notice "BABOON LINUX IS READY!"
