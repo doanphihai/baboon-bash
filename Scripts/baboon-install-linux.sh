@@ -46,7 +46,7 @@ write-notice "Swap to firefox developer edition"
 sudo apt-get remove -y firefox
 cd ~/tmp
 FIREFOX_DEV_ED_VERSION="35.0a2"
-FIREFOX_DEV_ED_FULLNAME="firefox-${FIREFOX_DEV_ED_VERSION}.en-US.linux-x86_64"
+FIREFOX_DEV_ED_FULLNAME="firefox-${FIREFOX_DEV_ED_VERSION}.en-US.linux-x86_64.tar.bz2"
 FIREFOX_DEV_ED_URL="https://download-installer.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-aurora/${FIREFOX_DEV_ED_FULLNAME}.tar.bz2"
 curl -LO "$FIREFOX_DEV_ED_URL"
 aunpack "$FIREFOX_DEV_ED_FULLNAME"
