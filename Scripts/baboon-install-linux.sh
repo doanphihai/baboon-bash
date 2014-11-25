@@ -121,24 +121,27 @@ dconf write /org/compiz/integrated/show-hud '[""]'
 dconf write /org/gnome/desktop/wm/keybindings/activate-window-menu '[""]'
 
 write-notice "Installing bananamacs"
+EMACS_VER=24.4
 cd ~
 mkdir Tools
 cd Tools
-wget http://ftp.gnu.org/gnu/emacs/emacs-24.4.tar.gz
-aunpack -X emacs emacs-24.4.tar.gz
-cp -r emacs temacs
+wget http://ftp.gnu.org/gnu/emacs/emacs-"$EMACS_VER".tar.gz
+mkdir emacs
+tar -xf emacs-"$EMACS_VER".tar.gz
+cp -r emacs-"$EMACS_VER" temacs-"$EMACS_VER"
 # Make regular Emacs
-cd emacs
-make -s maintainer-clean
-export CC=gcc CXX=g++; ../configure --prefix=/usr/local  --with-x-toolkit=gtk3 --with-wide-int  && make -s bootstrap
-sudo make -s install
+cd emacs/emacs-"$EMACS_VER"
+mkdir build
+cd build
+export CC=gcc CXX=g++; ../configure --prefix=/usr/local  --with-x-toolkit=gtk3 --with-wide-int && make bootstrap
+sudo make install
 # Mame Emacs for terminal use
-cd ~/Tools/temacs
+cd ~/Tools/temacs-"$EMACS_VER"
 ./autogen.sh
 mkdir build
 cd build
-export CC=gcc CXX=g++; ../configure --prefix=/usr/local --program-prefix=t --without-all --without-x --with-wide-int --with-xml2 && make -s bootstrap
-sudo make -s install
+export CC=gcc CXX=g++; ../configure --prefix=/usr/local --program-prefix=t --without-all --without-x --with-wide-int --with-xml2 && make bootstrap
+sudo make install
 # Set up .emacs.d
 cd ~
 mkdir -vp .emacs.d
