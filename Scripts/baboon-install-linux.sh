@@ -121,6 +121,7 @@ dconf write /org/compiz/integrated/show-hud '[""]'
 dconf write /org/gnome/desktop/wm/keybindings/activate-window-menu '[""]'
 
 write-notice "Installing bananamacs"
+sudo apt-get build-dep emacs24
 EMACS_VER=24.4
 cd ~
 mkdir Tools
@@ -129,7 +130,7 @@ wget http://ftp.gnu.org/gnu/emacs/emacs-"$EMACS_VER".tar.gz
 tar -xf emacs-"$EMACS_VER".tar.gz
 cp -r emacs-"$EMACS_VER" temacs-"$EMACS_VER"
 # Make regular Emacs
-cd emacs/emacs-"$EMACS_VER"
+cd emacs-"$EMACS_VER"
 mkdir build
 cd build
 export CC=gcc CXX=g++; ../configure --prefix=/usr/local  --with-x-toolkit=gtk3 --with-wide-int && make bootstrap
