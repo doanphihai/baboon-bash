@@ -126,7 +126,6 @@ cd ~
 mkdir Tools
 cd Tools
 wget http://ftp.gnu.org/gnu/emacs/emacs-"$EMACS_VER".tar.gz
-mkdir emacs
 tar -xf emacs-"$EMACS_VER".tar.gz
 cp -r emacs-"$EMACS_VER" temacs-"$EMACS_VER"
 # Make regular Emacs
