@@ -1,6 +1,6 @@
 [user]
 	name = Louis Kottmann
-        email = louis.kottman@gmail.com
+        email = louis.kottmann@gmail.com
 
 [branch]
 	; When a new branch is created with git branch or git checkout that tracks
