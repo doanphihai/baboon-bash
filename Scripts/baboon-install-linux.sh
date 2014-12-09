@@ -22,10 +22,10 @@ cd ~
 
 write-notice "Adding ppas"
 sudo add-apt-repository -y ppa:synapse-core/testing
-sudo add-apt-repository -y ppa:kilian/f.lux
 sudo add-apt-repository -y ppa:pi-rho/dev
-sudo add-apt-repository -y ppa:jon-severinsson/ffmpeg
 sudo add-apt-repository -y ppa:moka/stable
+sudo add-apt-repository -y ppa:mozillateam/firefox-next
+# reinstate f.lux?
 
 write-notice "Updating the system"
 sudo apt-get -y update
@@ -33,7 +33,7 @@ sudo apt-get -y upgrade
 
 write-notice "Installing programs via apt-get"
 sudo apt-get install -y \
-     curl git-core gitg xclip jq tree caca-utils lynx poppler-utils
+     curl git-core gitg xclip jq tree caca-utils lynx poppler-utils \
      mediainfo wmctrl \
      utfout libncurses5-dev libncursesw5-dev \
      moka-icon-theme faba-mono-icons \
@@ -42,17 +42,9 @@ sudo apt-get install -y \
      fluxgui tmux synapse wmctrl randomize-lines \
      sbcl
 
-write-notice "Swap to firefox developer edition"
+write-notice "Swap to firefox beta"
 sudo apt-get remove -y firefox
-cd ~/tmp
-FIREFOX_DEV_ED_VERSION="35.0a2"
-FIREFOX_DEV_ED_FULLNAME="firefox-${FIREFOX_DEV_ED_VERSION}.en-US.linux-x86_64.tar.bz2"
-FIREFOX_DEV_ED_URL="https://download-installer.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-aurora/${FIREFOX_DEV_ED_FULLNAME}"
-curl -LO "$FIREFOX_DEV_ED_URL"
-aunpack "$FIREFOX_DEV_ED_FULLNAME"
-rm -rf /usr/bin/firefox | :
-sudo ln -s "$(pwd)"/firefox/firefox /usr/bin/firefox
-cd ~
+sudo apt-get install -y firefox
 
 write-notice "Setting Theme"
 gsettings set org.gnome.desktop.interface icon-theme "Faba-mono" # <- not sure if that works, can always use "Unity Tweak"
