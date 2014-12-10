@@ -128,6 +128,7 @@ alias sudo='sudo '
 alias n='nano'
 alias sn='sudo nano'
 alias b='bundle exec'
+alias si='sudo apt-get install'
 
 # General functions
 function pse {
