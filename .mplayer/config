@@ -1,0 +1,5 @@
+# Write your default config options here!
+input=file=/home/louis/.mplayer/fifo
+
+
+

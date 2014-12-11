@@ -186,3 +186,4 @@ function docker-ip-for {
 alias ranger='EDITOR=nano ranger'
 alias watch-progesses='watch cv -q'
 alias ssh-agent-start='eval `ssh-agent -s`'
+alias mplayer-cmd='/home/louis/Scripts/mplayer-cmd.sh'
