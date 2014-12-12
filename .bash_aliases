@@ -187,3 +187,11 @@ alias ranger='EDITOR=nano ranger'
 alias watch-progesses='watch cv -q'
 alias ssh-agent-start='eval `ssh-agent -s`'
 alias mplayer-cmd='/home/louis/Scripts/mplayer-cmd.sh'
+
+# touchpad (find the name with `xinput --list`)
+function touchpad-enable {
+    xinput enable "$TOUCHPAD_XINPUT_NAME"
+}
+function touchpad-disable {
+    xinput disable "$TOUCHPAD_XINPUT_NAME"
+}
