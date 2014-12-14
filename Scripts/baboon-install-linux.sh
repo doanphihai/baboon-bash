@@ -41,6 +41,8 @@ sudo apt-get install -y \
      automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev \
      tmux mutate randomize-lines sbcl firefox
 
+# In mutate, use the shortcut Ctrl+Meta+S to launch (type it in)
+
 write-notice "Setting Theme"
 gsettings set org.gnome.desktop.interface icon-theme "Faba-mono" # <- not sure if that works, can always use "Unity Tweak"
 

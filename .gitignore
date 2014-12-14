@@ -44,8 +44,6 @@
 !.config/autostart
 !.config/ranger
 !.config/ranger/rc.conf
-!.config/Mutate
-!.config/Mutate/*
 
 !.mplayer
 !.mplayer/*
