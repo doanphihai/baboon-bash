@@ -17,13 +17,12 @@
 
 ## Projects
 !GitRepos
+
 !GitRepos/baboon-singing
 !GitRepos/baboon-singing/*
 
 !GitRepos/Muzei-Bash
-!GitRepos/Muzei-Bash/checkMuzei.sh
-!GitRepos/Muzei-Bash/MuzeiBash.sh
-!GitRepos/Muzei-Bash/README.md
+!GitRepos/Muzei-Bash/*
 
 ## Scripts
 !Scripts
@@ -42,14 +41,12 @@
 !.config/tmux
 !.config/tmux/*
 !.config.hotkeys
-!.config/hotkeys/synapse.hotkeys
 !.config/autostart
-!.config/autostart/synapse.desktop
-!.config/autostart/fluxgui.desktop
-!.config/synapse
-!.config/synapse/config.json
 !.config/ranger
 !.config/ranger/rc.conf
+!.config/Mutate
+!.config/Mutate/*
 
 !.mplayer
 !.mplayer/*
+

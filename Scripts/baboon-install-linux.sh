@@ -21,7 +21,7 @@ git-force-pull-repo() {
 cd ~
 
 write-notice "Adding ppas"
-sudo add-apt-repository -y ppa:synapse-core/testing
+sudo add-apt-repository -y ppa:mutate/ppa
 sudo add-apt-repository -y ppa:pi-rho/dev
 sudo add-apt-repository -y ppa:moka/stable
 sudo add-apt-repository -y ppa:mozillateam/firefox-next
@@ -34,27 +34,15 @@ sudo apt-get -y upgrade
 write-notice "Installing programs via apt-get"
 sudo apt-get install -y \
      curl git-core gitg xclip jq tree caca-utils lynx poppler-utils \
-     mediainfo wmctrl \
+     mediainfo wmctrl unity-tweak-tool compizconfig-settings-manager \
      utfout libncurses5-dev libncursesw5-dev \
      moka-icon-theme faba-mono-icons \
-     highlight atool ranger mplayer ffmpeg \
+     highlight atool ranger mplayer \
      automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev \
-     fluxgui tmux synapse wmctrl randomize-lines \
-     sbcl
-
-write-notice "Swap to firefox beta"
-sudo apt-get remove -y firefox
-sudo apt-get install -y firefox
+     tmux mutate randomize-lines sbcl firefox
 
 write-notice "Setting Theme"
 gsettings set org.gnome.desktop.interface icon-theme "Faba-mono" # <- not sure if that works, can always use "Unity Tweak"
-
-write-notice "Now generating SSH key"
-cd ~
-ssh-keygen
-xclip -sel clip < ~/.ssh/id_rsa.pub
-echo "Your new public key has been copied to the clipboard, please go paste it in Github"
-read -p "Ready to continue? (press ENTER)"
 
 write-notice "Installing bashmarks"
 cd ~
@@ -170,7 +158,7 @@ emacs --daemon
 kill-emacs
 
 write-notice "Installing shellcheck"
-sudo apt-get -y install cabal
+sudo apt-get -y install cabal-install
 cabal update
 cabal install cabal-install
 cabal install shellcheck
