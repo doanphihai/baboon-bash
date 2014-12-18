@@ -120,6 +120,10 @@ song() {
                   local radio_url=${!radio_name}
                   radio "$radio_url" >/dev/null 2>&1 &
                   return ;;
+        'pause') ../../Scripts/mplayer-cmd.sh pause
+                 return ;;
+        'stop') ../../Scripts/mplayer-cmd.sh stop
+                return ;;
     esac
 
     # display infos on current song to the user
