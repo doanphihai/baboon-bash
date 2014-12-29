@@ -83,3 +83,4 @@
 - [29/10/14 15h] Bobby Womack ~ Stupid
 - [21/11/14 21h] Ellie Goulding ~ Life Round Here (Feat Angel Haze)
 - [22/11/14 05h] Whitey ~ Count Those Freaks
+- [29/12/14 23h] Flight Facilities ~ Stand Still
