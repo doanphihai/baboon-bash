@@ -99,6 +99,12 @@ function __prompt_command()
 
     # prompt $ or # for root
     PS1+="\$ "
+
+    # keep a shared history between tmux windows
+    ## append last command to history
+    history -a
+    ## reload history
+    history -n
 }
 
 PROMPT_COMMAND=__prompt_command
