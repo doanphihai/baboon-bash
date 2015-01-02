@@ -32,6 +32,8 @@
 	c = commit
 	cm = commit --message
 	cam = commit --all --message
+	caa = commit --all --amend
+	car = commit --all --reuse-message=HEAD
 	st = status -sb
 	br = branch
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
