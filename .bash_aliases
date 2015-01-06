@@ -201,3 +201,5 @@ function touchpad-enable {
 function touchpad-disable {
     xinput disable "$TOUCHPAD_XINPUT_NAME"
 }
+alias blackbox='docker run -it --rm baboon:base /sbin/my_init -- bash'
+alias myip='ip route get 8.8.8.8 | head -1 | cut -d'\'' '\'' -f8'
