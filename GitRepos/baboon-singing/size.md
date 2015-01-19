@@ -84,3 +84,4 @@
 - [21/11/14 21h] Ellie Goulding ~ Life Round Here (Feat Angel Haze)
 - [22/11/14 05h] Whitey ~ Count Those Freaks
 - [29/12/14 23h] Flight Facilities ~ Stand Still
+- [19/01/15 17h] 80s Casual ~ Fiesta (Gramatik Remix)
