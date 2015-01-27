@@ -203,3 +203,16 @@ function touchpad-disable {
 }
 alias blackbox='docker run -it --rm baboon:base /sbin/my_init -- bash'
 alias myip='ip route get 8.8.8.8 | head -1 | cut -d'\'' '\'' -f8'
+
+function gh-repo-address-ssh {
+    echo "git@github.com:"$1".git"
+}
+function gh-repo-address-https {
+    echo "https://github.com/"$1".git"
+}
+function gh-clone-ssh {
+    git clone "$(gh-repo-address-ssh "$1")"
+}
+function gh-clone-https {
+    git clone "$(gh-repo-address-https "$1")"
+}
