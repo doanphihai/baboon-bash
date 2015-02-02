@@ -14,3 +14,4 @@
 - [12/09/14 04h] Saint-Sa\u00ebns ~ Symphonie n\u00b0 3 \
 - [24/10/14 21h] Beethoven ~ Sonate pour piano n\u00b0 8 \
 - [24/10/14 21h] Beethoven ~ Sonate pour piano n\u00b0 8 \
+- [02/02/15 16h] Saint-Sa\u00ebns ~ Concerto pour piano & orch. n\u00b0 2: 1er mvt  A.Ciccolini / Orch Paris / S.Baudo
