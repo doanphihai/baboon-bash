@@ -219,3 +219,7 @@ function gh-clone-ssh {
 function gh-clone-https {
     git clone "$(gh-repo-address-https "$1")"
 }
+function openssl-test-server-and-port {
+    # usage: openssl-test-server-and-port baboon.io:6999
+    openssl s_client -showcerts -connect "$@"
+}
