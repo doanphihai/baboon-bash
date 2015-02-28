@@ -246,3 +246,4 @@ function mount-trinasse {
     read -sp "Password: " babpas
     mount.cifs //"$TRINASSE_IP"/"$target" "$mountpoint" -o user="$babusr",pass="$babpas"
 }
+alias suu='sudo apt-get update && sudo apt-get upgrade'
