@@ -32,6 +32,7 @@
 	c = commit
 	cm = commit --message
 	cam = commit --all --message
+	ca = commit --amend
 	caa = commit --all --amend
 	car = commit --all --reuse-message=HEAD
 	st = status -sb
