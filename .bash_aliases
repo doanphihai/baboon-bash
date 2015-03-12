@@ -247,3 +247,7 @@ function mount-trinasse {
     mount.cifs //"$TRINASSE_IP"/"$target" "$mountpoint" -o user="$babusr",pass="$babpas"
 }
 alias suu='sudo apt-get update && sudo apt-get upgrade'
+
+function find-big-files {
+    find ${1-~} -type f -size +${2-50M} -exec ls -lh {} \;
+}
