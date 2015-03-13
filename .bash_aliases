@@ -251,3 +251,4 @@ alias suu='sudo apt-get update && sudo apt-get upgrade'
 function find-big-files {
     find ${1-~} -type f -size +${2-50M} -exec ls -lh {} \;
 }
+alias tree-verbose='tree -DFlah '
