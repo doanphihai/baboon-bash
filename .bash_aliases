@@ -252,3 +252,9 @@ function find-big-files {
     find ${1-~} -type f -size +${2-50M} -exec ls -lh {} \;
 }
 alias tree-verbose='tree -DFlah '
+
+function fix-ubuntu-date-widget {
+    sudo apt-get install indicator-datetime
+    sudo dpkg-reconfigure --frontend noninteractive tzdata
+    sudo killall unity-panel-service
+}
