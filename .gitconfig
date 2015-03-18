@@ -52,6 +52,7 @@
 	new = !sh -c 'git gg $1@{1}..$1@{0} "$@"' && echo
 	pull-gg = !git pull && git new
 	push-gg = !git push && git new
+	fixup = !sh -c 'git commit --fixup="$1" && git rebase --interactive --autosquash "$1"~1' -
 
 [core]
 	excludesfile = ~/.gitignore_global
