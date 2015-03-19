@@ -50,6 +50,8 @@
 	d = diff
 	unstage = reset HEAD --
 	new = !sh -c 'git gg $1@{1}..$1@{0} "$@"' && echo
+	show-new-sha1s = !sh -c 'git log --all --pretty=oneline --abbrev-commit $1@{1}..$1@{0} "$@" | head | awk \"{print \\$1}\"'
+	diff-new = !sh -c 'git show-new-sha1s | xargs -I {} git diff {}' && echo
 	pull-gg = !git pull && git new
 	push-gg = !git push && git new
 	fixup = !sh -c 'git commit --fixup="$1" && git rebase --interactive --autosquash "$1"~1' -
