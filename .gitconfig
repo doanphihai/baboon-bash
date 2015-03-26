@@ -27,6 +27,7 @@
         trustExitCode = true
 
 [alias]
+	a = add
 	co = checkout
 	pr = pull --rebase
 	c = commit
@@ -54,7 +55,7 @@
 	diff-new = !sh -c 'git show-new-sha1s | xargs -I {} git diff {}' && echo
 	pull-gg = !git pull && git new
 	push-gg = !git push && git new
-	fixup = !sh -c 'git commit --fixup="$1" && git rebase --interactive --autosquash "$1"~1' -
+	fixup = !sh -c 'git commit --fixup="$1" && git rebase --interactive --autostash --autosquash "$1"~1' -
 
 [core]
 	excludesfile = ~/.gitignore_global
