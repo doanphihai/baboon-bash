@@ -153,7 +153,10 @@ sbcl --non-interactive \
      --load quicklisp.lisp \
      --eval '(quicklisp-quickstart:install)' \
      --eval '(ql:add-to-init-file)' \
-     --eval '(ql:quickload "quicklisp-slime-helper")'
+     --eval '(ql:quickload "quicklisp-slime-helper")' \
+     --eval '(ql:quickload "clhs")' \
+     --eval '(clhs:install-clhs-use-local)'
+
 
 write-notice "Installing bananamacs dependencies"
 emacs --daemon
