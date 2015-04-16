@@ -90,3 +90,4 @@
 - [16/03/15 18h] Pink Martini and the Von Trapps ~ Dream a Little Dream
 - [31/03/15 17h] Deluxe ~ Breaking News (Feat ASM)
 - [08/04/15 00h] Brother Ali ~ Truth Is
+- [16/04/15 11h] The French Touch Connection ~ Les Princes De La Cuite
