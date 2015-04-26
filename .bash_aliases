@@ -258,3 +258,4 @@ function fix-ubuntu-date-widget {
     sudo dpkg-reconfigure --frontend noninteractive tzdata
     sudo killall unity-panel-service
 }
+alias tmux-new-session='tmux new-session -t 0'
