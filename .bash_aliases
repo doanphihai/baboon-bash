@@ -58,8 +58,6 @@ function __prompt_command()
     EXIT="$?"
     PS1=""
 
-    if [ $EXIT -eq 0 ]; then PS1+="\[$Green\][\!]\[$Color_Off\] "; else PS1+="\[$Red\][\!]\[$Color_Off\] "; fi
-
     # if logged in via ssh shows the ip of the client
     # ip of ssher: ${SSH_CLIENT%% *}
     if [ -n "$SSH_CLIENT" ]; then PS1+="\[$Yellow\]("$USER"@"$(hostname)") \[$Color_Off\]"; fi
@@ -98,7 +96,7 @@ function __prompt_command()
     fi
 
     # prompt $ or # for root
-    PS1+="\$ "
+    if [ $EXIT -eq 0 ]; then PS1+="\[$Green\]\$\[$Color_Off\] "; else PS1+="\[$Red\]\$\[$Color_Off\] "; fi
 
     # keep a shared history between tmux windows
     ## append last command to history
