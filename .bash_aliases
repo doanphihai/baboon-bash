@@ -40,15 +40,15 @@ function ahead_behind {
     fi
 
     if [[ "$behind" == 0 ]]; then
-        ahead_behind+="[$behind"
+        ahead_behind+="($behind"
     else
-        ahead_behind+="[\[$Red\]$behind\[$Color_Off\]"
+        ahead_behind+="(\[$Red\]$behind\[$Color_Off\]"
     fi
     ahead_behind+="|"
     if [[ "$ahead" == 0 ]]; then
-        ahead_behind+="$ahead]"
+        ahead_behind+="$ahead)"
     else
-        ahead_behind+="\[$Green\]$ahead\[$Color_Off\]]"
+        ahead_behind+="\[$Green\]$ahead\[$Color_Off\])"
     fi
     echo "$ahead_behind"
 }
@@ -92,7 +92,7 @@ function __prompt_command()
         fi
 
         # add the result to prompt
-        PS1+="\[$Color_On\][$branch]\[$Color_Off\]$(ahead_behind) "
+        PS1+="\[$Color_On\]$branch\[$Color_Off\]$(ahead_behind) "
     fi
 
     # prompt $ or # for root
