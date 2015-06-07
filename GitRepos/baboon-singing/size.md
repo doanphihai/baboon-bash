@@ -93,3 +93,4 @@
 - [16/04/15 11h] The French Touch Connection ~ Les Princes De La Cuite
 - [19/04/15 21h] Silk Rhodes ~ Pains
 - [06/05/15 15h] DeeeLite ~ Groove Is In The Heart (The Reflex)
+- [07/06/15 22h] Thundamentals ~ How You Been?
