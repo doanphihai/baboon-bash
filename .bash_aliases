@@ -222,28 +222,6 @@ function openssl-test-server-and-port {
     openssl s_client -showcerts -connect "$@"
 }
 
-TRINASSE_IP=192.168.1.13
-function mount-trinasse {
-    # requires cifs-utils package
-    local target="$1"
-    local mountpoint="/mnt/trinasse/"$target""
-
-    if [[ ! $(whoami) = "root" ]]
-    then
-        echo "This function needs sudo grace period"
-        sudo touch "$0"
-        return
-    fi
-
-    read -p "Mounting //"$TRINASSE_IP"/"$target" at "$mountpoint" (will create if necessary). Ok? (Y/n)"
-    [[ "$REPLY" = "n" ]] && return
-
-    [[ -d "$mountpoint" ]] || mkdir -vp "$mountpoint"
-
-    read -p "Username: " babusr
-    read -sp "Password: " babpas
-    mount.cifs //"$TRINASSE_IP"/"$target" "$mountpoint" -o user="$babusr",pass="$babpas"
-}
 alias suu='sudo apt-get update && sudo apt-get upgrade'
 
 function find-big-files {
