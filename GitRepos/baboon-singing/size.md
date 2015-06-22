@@ -94,3 +94,4 @@
 - [19/04/15 21h] Silk Rhodes ~ Pains
 - [06/05/15 15h] DeeeLite ~ Groove Is In The Heart (The Reflex)
 - [07/06/15 22h] Thundamentals ~ How You Been?
+- [22/06/15 11h] Ozi Batla ~ Put It On Wax
