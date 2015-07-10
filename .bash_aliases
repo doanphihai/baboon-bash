@@ -235,3 +235,10 @@ function fix-ubuntu-date-widget {
     sudo killall unity-panel-service
 }
 alias tmux-new-session='tmux new-session -t 0'
+
+function move-window-leftmost {
+    # move it
+    wmctrl -r "$@" -e 0,0,0,-1,-1
+    # put it in foreground
+    wmctrl -a "$@"
+}
