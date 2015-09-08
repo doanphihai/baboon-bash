@@ -16,3 +16,4 @@
 - [24/10/14 21h] Beethoven ~ Sonate pour piano n\u00b0 8 \
 - [02/02/15 16h] Saint-Sa\u00ebns ~ Concerto pour piano & orch. n\u00b0 2: 1er mvt  A.Ciccolini / Orch Paris / S.Baudo
 - [01/09/15 21h] Berlioz ~ Symphonie fantastique:3\u00e8 mvt \
+- [08/09/15 14h] Beethoven ~ Symphonie n\u00b08 : 1er mvt  Orch R\u00e9volutionnaire et Romantique / J-E.Gardiner
