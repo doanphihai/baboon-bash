@@ -157,6 +157,9 @@ source ~/GitRepos/baboon-singing/save-radios.sh
 function fplay {
     find /mnt/trinasse/partage/Musique/ -type f -iname "*$@*" -print0 | xargs -0 vlc;
 }
+function fplayrand {
+    find /mnt/trinasse/partage/Musique/ -type f -print0 | shuf -zn "${1:-10}" | xargs -0 ~/Downloads/deadbeef-devel/deadbeef;
+}
 
 # TMUX
 if ! [[ -n $SSH_CLIENT ]]
