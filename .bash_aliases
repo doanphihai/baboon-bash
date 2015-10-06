@@ -273,3 +273,6 @@ function pa-playbackset {
     # apply changes to one running app to use the new output device
     pacmd move-sink-input "$1" "$2" &> /dev/null
 }
+function calc {
+    echo "puts $*" | ruby;
+}
