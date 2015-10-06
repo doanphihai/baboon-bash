@@ -180,7 +180,7 @@ echo "https://krita.org/download/krita-desktop/" | xclip -sel clip
 write-notice "Url to install Krita has been saved to clipboard"
 
 write-notice "Removing warnings during GnuPG interaction with Gnome keyring"
-sudo sed -i s/AGENT_ID/AGENX_ID/ `which gpg2`
+sudo sed -i s/AGENT_ID/AGENX_ID/ "$(which gpg2)"
 
 cd ~
 write-notice "BABOON LINUX IS READY!"
