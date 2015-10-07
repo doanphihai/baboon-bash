@@ -107,8 +107,8 @@ function __prompt_command()
 
 PROMPT_COMMAND=__prompt_command
 
-HISTSIZE=50000
-HISTFILESIZE=500000
+HISTSIZE=500000
+HISTFILESIZE=5000000
 
 # set emacs mode for bash
 set -o emacs
