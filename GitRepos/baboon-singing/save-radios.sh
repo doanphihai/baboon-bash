@@ -75,7 +75,7 @@ save-to-git() {
     git stash --quiet
     git pull --quiet origin master
     git push --quiet origin master
-    git stash pop --quiet >/dev/null
+    git stash pop --quiet >/dev/null 2>&1
     popd >/dev/null
 }
 show-menu() {
