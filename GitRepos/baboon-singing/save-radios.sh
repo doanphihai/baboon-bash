@@ -10,9 +10,9 @@ function radio {
 ### Urls
 CLASSIQUE=http://radioclassique.ice.infomaniak.ch/radioclassique-high.mp3
 SIZE=http://size.ice.infomaniak.ch/size-128.mp3
-MEUH=http://genisse.radiomeuh.com/big.mp3
+MEUH=http://radiomeuh.ice.infomaniak.ch/radiomeuh-128.mp3
 NOVA=http://novazz.ice.infomaniak.ch/novazz-128.mp3
-FIP=http://mp3lg.tdf-cdn.com/fip/all/fiphautdebit.mp3
+FIP=http://audio.scdn.arkena.com/11016/fip-midfi128.mp3
 alias radios='vlcncurses $SIZE $CLASSIQUE $MEUH $NOVA $FIP'
 
 get-current-song-on-radio-classique() { # Multiline
