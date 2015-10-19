@@ -19,3 +19,4 @@
 - [08/09/15 14h] Beethoven ~ Symphonie n\u00b08 : 1er mvt  Orch R\u00e9volutionnaire et Romantique / J-E.Gardiner
 - [11/09/15 11h] Mozart ~ Symphonie n\u00b040:1er mvt  Orch Philh Hongrie / Z.Kocsis
 - [12/10/15 15h] Mozart ~ Grande Messe en ut m:Kyrie  Tilling / Gabrieli Consort / McCreesh
+- [19/10/15 04h] Wagner ~ Tannh\u00e4user : Ouverture  Philharmonia / O.Klemperer
