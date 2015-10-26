@@ -158,7 +158,11 @@ function fplay {
     find /mnt/trinasse/partage/Musique/ -type f -iname "*$@*" -print0 | xargs -0 vlc;
 }
 function fplayrand {
-    find /mnt/trinasse/partage/Musique/ -type f -print0 | shuf -zn "${1:-10}" | xargs -0 ~/Downloads/deadbeef-devel/deadbeef;
+    find /mnt/trinasse/partage/Musique/ -type f -print0 -name '*.mp3' \
+                                                     -o -name '*.flac' \
+                                                     -o -name '*.mp4' \
+        | shuf -zn "${1:-10}" \
+        | xargs -0 ~/Downloads/deadbeef-devel/deadbeef;
 }
 
 # TMUX
