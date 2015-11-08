@@ -98,3 +98,4 @@
 - [30/09/15 22h] Ghostface Killah ~ I Declare War (Instrumental)
 - [06/10/15 02h] Loud Lary Ajust ~ Tiens mon drink
 - [19/10/15 22h] Bloum ~ La Folie
+- [08/11/15 15h] Ibeyi ~ River
