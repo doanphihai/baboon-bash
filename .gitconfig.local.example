@@ -1,0 +1,4 @@
+[github]
+       user = louiskottmann
+       password = [plain text password for github]
+       oauth-token = [alphanumeric token]

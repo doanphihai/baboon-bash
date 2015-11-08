@@ -10,6 +10,7 @@
 !.bash_aliases
 !.bash_profile
 !.gitconfig
+!.gitconfig.local.example
 !.gitignore
 !.gitignore_global
 !.tmux.conf
