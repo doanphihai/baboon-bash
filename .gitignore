@@ -36,7 +36,15 @@
 !.git-dude/Logos-Github-icon.png
 
 !.xchat2
-!.xchat2/*
+!.xchat2/chanopt.conf
+!.xchat2/colors.conf
+!.xchat2/ignore.conf
+!.xchat2/keybindings.conf
+!.xchat2/notify.conf
+!.xchat2/pevents.conf
+!.xchat2/sound.conf
+!.xchat2/xchat.conf
+
 
 !.config
 !.config/tmux
