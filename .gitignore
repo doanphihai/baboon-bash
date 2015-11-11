@@ -53,6 +53,7 @@
 !.config/autostart
 !.config/ranger
 !.config/ranger/rc.conf
+!.config/redshift.conf
 
 !.mplayer
 !.mplayer/config
