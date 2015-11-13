@@ -10,14 +10,14 @@
 - [08/04/14 17h] Tchaïkovsky ~ Symphonie n°6 \
 - [08/04/14 17h] Chopin ~ Concerto pour piano n°2:2è mvt K.Zimerman / Orch Phil de L.A / Carlo Maria Giulini
 - [16/07/14 01h] Gershwin ~ Rhapsody in Blue Orch Philh Los Angeles / M.Tilson Thomas
-- [11/09/14 15h] Mozart ~ Symphonie n\u00b025: 1er mvt  Concentus Mus. Vienne / Harnoncourt
-- [12/09/14 04h] Saint-Sa\u00ebns ~ Symphonie n\u00b0 3 \
-- [24/10/14 21h] Beethoven ~ Sonate pour piano n\u00b0 8 \
-- [24/10/14 21h] Beethoven ~ Sonate pour piano n\u00b0 8 \
-- [02/02/15 16h] Saint-Sa\u00ebns ~ Concerto pour piano & orch. n\u00b0 2: 1er mvt  A.Ciccolini / Orch Paris / S.Baudo
-- [01/09/15 21h] Berlioz ~ Symphonie fantastique:3\u00e8 mvt \
-- [08/09/15 14h] Beethoven ~ Symphonie n\u00b08 : 1er mvt  Orch R\u00e9volutionnaire et Romantique / J-E.Gardiner
-- [11/09/15 11h] Mozart ~ Symphonie n\u00b040:1er mvt  Orch Philh Hongrie / Z.Kocsis
+- [11/09/14 15h] Mozart ~ Symphonie n°25: 1er mvt  Concentus Mus. Vienne / Harnoncourt
+- [12/09/14 04h] Saint-Saëns ~ Symphonie n° 3 \
+- [24/10/14 21h] Beethoven ~ Sonate pour piano n° 8 \
+- [24/10/14 21h] Beethoven ~ Sonate pour piano n° 8 \
+- [02/02/15 16h] Saint-Saëns ~ Concerto pour piano & orch. n° 2: 1er mvt  A.Ciccolini / Orch Paris / S.Baudo
+- [01/09/15 21h] Berlioz ~ Symphonie fantastique:3è mvt \
+- [08/09/15 14h] Beethoven ~ Symphonie n°8 : 1er mvt  Orch Révolutionnaire et Romantique / J-E.Gardiner
+- [11/09/15 11h] Mozart ~ Symphonie n°40:1er mvt  Orch Philh Hongrie / Z.Kocsis
 - [12/10/15 15h] Mozart ~ Grande Messe en ut m:Kyrie  Tilling / Gabrieli Consort / McCreesh
-- [19/10/15 04h] Wagner ~ Tannh\u00e4user : Ouverture  Philharmonia / O.Klemperer
+- [19/10/15 04h] Wagner ~ Tannhäuser : Ouverture  Philharmonia / O.Klemperer
 - [13/11/15 02h] Brahms ~ Variations sur un thème de Joseph Haydn  Orch Phil de Berlin / H.von Karajan
