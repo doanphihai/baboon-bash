@@ -20,3 +20,4 @@
 - [11/09/15 11h] Mozart ~ Symphonie n\u00b040:1er mvt  Orch Philh Hongrie / Z.Kocsis
 - [12/10/15 15h] Mozart ~ Grande Messe en ut m:Kyrie  Tilling / Gabrieli Consort / McCreesh
 - [19/10/15 04h] Wagner ~ Tannh\u00e4user : Ouverture  Philharmonia / O.Klemperer
+- [13/11/15 02h] Brahms ~ Variations sur un thème de Joseph Haydn  Orch Phil de Berlin / H.von Karajan
