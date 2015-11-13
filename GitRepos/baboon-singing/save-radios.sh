@@ -139,7 +139,7 @@ song() {
     read -p "Would you like to save that song (y/N)?"
     [[ "$REPLY" == "y" ]] || return
 
-    local oneLiner=$(format-for-saving "$current")
+    local oneLiner=$(format-for-saving "$escaped_current")
     save-to-best-songs-list "$targetFile" "$oneLiner"
     save-to-git "$targetFile" "$oneLiner"
 }
