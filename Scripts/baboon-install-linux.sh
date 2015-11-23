@@ -145,7 +145,7 @@ chmod +x checkMuzei.sh MuzeiBash.sh
 # every day at 11am
 { crontab -l; echo "00 11 * * * $(whoami) /home/$(whoami)/GitRepos/Muzei-Bash/checkMuzei.sh"; } | crontab -
 
-write-notice "Installing Quicklisp + SLIME"
+write-notice "Installing Quicklisp, SLIME & SBCL sources"
 cd ~/tmp
 curl -O http://beta.quicklisp.org/quicklisp.lisp
 sbcl --non-interactive \
@@ -156,7 +156,7 @@ sbcl --non-interactive \
      --eval '(ql:quickload "quicklisp-slime-helper")' \
      --eval '(ql:quickload "clhs")' \
      --eval '(clhs:install-clhs-use-local)'
-
+sudo git clone https://github.com/sbcl/sbcl.git /opt/sbcl
 
 write-notice "Installing bananamacs dependencies"
 emacs --daemon
