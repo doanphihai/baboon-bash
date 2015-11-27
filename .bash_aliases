@@ -281,3 +281,15 @@ function calc {
     echo "puts $*" | ruby;
 }
 alias set_gaming_affinity='sudo su root -c "taskset -pc 0-6 $(pgrep dota2) && taskset -pc 7 $(pgrep vlc)"'
+
+TRINASSE_IP=192.168.1.13
+function mount-trinasse {
+    local trinasse_share_name="$1"
+    local trinasse_username="$2"
+    local trinasse_password="$3"
+    sudo mkdir -vp /mnt/trinasse/"${trinasse_share_name}"
+    sudo mount.cifs \
+         //"$TRINASSE_IP"/"${trinasse_share_name}" \
+         /mnt/trinasse/"${trinasse_share_name}" \
+         -o user="${trinasse_username}",pass="${trinasse_password}",uid=1000,gid=1000
+}
