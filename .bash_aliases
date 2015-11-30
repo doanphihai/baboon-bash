@@ -60,13 +60,22 @@ function __prompt_command()
 
     # if logged in via ssh shows the ip of the client
     # ip of ssher: ${SSH_CLIENT%% *}
-    if [ -n "$SSH_CLIENT" ]; then PS1+="\[$Yellow\]("$USER"@"$(hostname)") \[$Color_Off\]"; fi
+    if [ -n "$SSH_CLIENT" ]
+    then
+        PS1+="\[$Yellow\]("$USER"@"$(hostname)") \[$Color_Off\]"
+    fi
 
     # debian chroot stuff (take it or leave it)
     PS1+="${debian_chroot:+($debian_chroot)}"
 
-    if [ $FULL_PROMPT -eq 1 ]; then
+    if [[ $FULL_PROMPT = 1 ]]
+    then
         PS1+="\[$BRed\]\u\[$Color_Off\]@\[$BRed\]\h\[$Color_Off\]:"
+    else
+        if [[ ! "$USER" = "baboon"  ]]
+        then
+           PS1+="\[$BRed\]\u\[$Color_Off\] "
+        fi
     fi
 
     # basic information (user@host:path)
