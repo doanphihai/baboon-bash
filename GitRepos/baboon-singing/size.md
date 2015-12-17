@@ -100,3 +100,4 @@
 - [19/10/15 22h] Bloum ~ La Folie
 - [08/11/15 15h] Ibeyi ~ River
 - [19/11/15 01h] Kate Tempest ~ Lonely Daze
+- [17/12/15 23h] Talib Kweli ~ Get by
