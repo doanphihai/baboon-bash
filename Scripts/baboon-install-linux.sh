@@ -39,7 +39,7 @@ sudo apt-get install -y \
      moka-icon-theme faba-mono-icons \
      highlight atool ranger mplayer \
      automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev \
-     tmux mutate randomize-lines sbcl firefox ncdu nethogs kontact redshift-gtk
+     tmux mutate randomize-lines sbcl firefox ncdu nethogs redshift-gtk kcolorchooser
 
 # In mutate, use the shortcut Ctrl+Meta+S to launch (type it in)
 
