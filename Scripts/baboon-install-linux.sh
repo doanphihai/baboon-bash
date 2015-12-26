@@ -60,14 +60,16 @@ sed -i 's/^alias l=.\+$//' .bashrc # removes alias l so that bashmarks can work 
 source ~/.bashrc
 unalias l
 
-write-notice "Adding shortcuts (F2->F4) for terminal/emacs/firefox"
+write-notice "Adding shortcuts (F2->F4 - F7->F8) for terminal/emacs/firefox/dota2/vlc"
 media_keys=org.gnome.settings-daemon.plugins.media-keys
 keymap=/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/
 
 # one per custom keybinding
 gsettings set $media_keys custom-keybindings "['"$keymap"custom1/',
                                                '"$keymap"custom2/',
-                                               '"$keymap"custom3/']"
+                                               '"$keymap"custom3/',
+                                               '"$keymap"custom4/',
+                                               '"$keymap"custom5/']"
 
 gsettings set $media_keys.custom-keybinding:"$keymap"custom1/ name "switch-to-terminal"
 gsettings set $media_keys.custom-keybinding:"$keymap"custom1/ command "wmctrl -xa terminal"
@@ -80,6 +82,14 @@ gsettings set $media_keys.custom-keybinding:"$keymap"custom2/ binding "F3"
 gsettings set $media_keys.custom-keybinding:"$keymap"custom3/ name "switch-to-firefox"
 gsettings set $media_keys.custom-keybinding:"$keymap"custom3/ command "wmctrl -xa firefox"
 gsettings set $media_keys.custom-keybinding:"$keymap"custom3/ binding "F4"
+
+gsettings set $media_keys.custom-keybinding:"$keymap"custom4/ name "switch-to-dota2"
+gsettings set $media_keys.custom-keybinding:"$keymap"custom4/ command "wmctrl -xa dota2"
+gsettings set $media_keys.custom-keybinding:"$keymap"custom4/ binding "F7"
+
+gsettings set $media_keys.custom-keybinding:"$keymap"custom5/ name "switch-to-vlc"
+gsettings set $media_keys.custom-keybinding:"$keymap"custom5/ command "wmctrl -xa vlc"
+gsettings set $media_keys.custom-keybinding:"$keymap"custom5/ binding "F8"
 
 write-notice "Installing baboon-bash"
 cd ~
