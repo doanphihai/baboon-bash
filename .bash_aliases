@@ -289,7 +289,7 @@ function pa-playbackset {
 function calc {
     echo "puts $*" | ruby;
 }
-alias set_gaming_affinity='sudo su root -c "taskset -pc 0-6 $(pgrep dota2) && taskset -pc 7 $(pgrep vlc)"'
+alias set-gaming-affinity='sudo su root -c "taskset -pc 0-6 $(pgrep dota2) && taskset -pc 7 $(pgrep vlc)"'
 
 TRINASSE_IP=192.168.1.13
 function mount-trinasse {
