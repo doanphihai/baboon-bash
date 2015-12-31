@@ -72,15 +72,15 @@ gsettings set $media_keys custom-keybindings "['"$keymap"custom1/',
                                                '"$keymap"custom5/']"
 
 gsettings set $media_keys.custom-keybinding:"$keymap"custom1/ name "switch-to-terminal"
-gsettings set $media_keys.custom-keybinding:"$keymap"custom1/ command "wmctrl -xa terminal"
+gsettings set $media_keys.custom-keybinding:"$keymap"custom1/ command "/home/baboon/Scripts/cycle_window.sh terminal"
 gsettings set $media_keys.custom-keybinding:"$keymap"custom1/ binding "F2"
 
 gsettings set $media_keys.custom-keybinding:"$keymap"custom2/ name "switch-to-emacs"
-gsettings set $media_keys.custom-keybinding:"$keymap"custom2/ command "wmctrl -xa emacs"
+gsettings set $media_keys.custom-keybinding:"$keymap"custom2/ command "bash /home/baboon/Scripts/cycle_window.sh emacs"
 gsettings set $media_keys.custom-keybinding:"$keymap"custom2/ binding "F3"
 
 gsettings set $media_keys.custom-keybinding:"$keymap"custom3/ name "switch-to-firefox"
-gsettings set $media_keys.custom-keybinding:"$keymap"custom3/ command "wmctrl -xa firefox"
+gsettings set $media_keys.custom-keybinding:"$keymap"custom3/ command "bash /home/baboon/Scripts/cycle_window.sh firefox"
 gsettings set $media_keys.custom-keybinding:"$keymap"custom3/ binding "F4"
 
 gsettings set $media_keys.custom-keybinding:"$keymap"custom4/ name "switch-to-dota2"
@@ -88,7 +88,7 @@ gsettings set $media_keys.custom-keybinding:"$keymap"custom4/ command "wmctrl -x
 gsettings set $media_keys.custom-keybinding:"$keymap"custom4/ binding "F7"
 
 gsettings set $media_keys.custom-keybinding:"$keymap"custom5/ name "switch-to-vlc"
-gsettings set $media_keys.custom-keybinding:"$keymap"custom5/ command "wmctrl -xa vlc"
+gsettings set $media_keys.custom-keybinding:"$keymap"custom5/ command "bash /home/baboon/Scripts/cycle_window.sh vlc"
 gsettings set $media_keys.custom-keybinding:"$keymap"custom5/ binding "F8"
 
 write-notice "Installing baboon-bash"
