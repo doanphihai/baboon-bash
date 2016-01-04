@@ -187,6 +187,11 @@ cd cv
 make
 sudo make install
 
+write-notice "Installing tldr"
+cd ~/tmp
+wget https://github.com/pranavraja/tldr/releases/download/v1/tldr_0.1.0_amd64.deb
+sudo dpkg -i tldr_0.1.0_amd64.deb
+
 echo "https://krita.org/download/krita-desktop/" | xclip -sel clip
 write-notice "Url to install Krita has been saved to clipboard"
 
