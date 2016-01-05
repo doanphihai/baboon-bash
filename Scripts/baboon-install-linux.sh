@@ -37,7 +37,7 @@ sudo apt-get install -y \
      mediainfo wmctrl unity-tweak-tool compizconfig-settings-manager compiz-plugins \
      utfout libncurses5-dev libncursesw5-dev \
      moka-icon-theme faba-mono-icons \
-     highlight atool ranger mplayer \
+     highlight atool mplayer \
      automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev \
      tmux mutate randomize-lines sbcl firefox ncdu nethogs redshift-gtk \
      aspell-fr kcolorchooser

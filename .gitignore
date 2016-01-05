@@ -50,8 +50,6 @@
 !.config/tmux
 !.config/tmux/*
 !.config.hotkeys
-!.config/autostart
-!.config/ranger
 !.config/ranger/rc.conf
 !.config/redshift.conf
 
