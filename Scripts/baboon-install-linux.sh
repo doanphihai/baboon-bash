@@ -187,10 +187,14 @@ cd cv
 make
 sudo make install
 
-write-notice "Installing tldr"
+write-notice "Installing tldr" # Shortened man pages
 cd ~/tmp
 wget https://github.com/pranavraja/tldr/releases/download/v1/tldr_0.1.0_amd64.deb
 sudo dpkg -i tldr_0.1.0_amd64.deb
+
+write-notice "Installing fzf" # Fuzzy completion on C-t (current dir) C-r (history) and M-c (cd)
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
 
 echo "https://krita.org/download/krita-desktop/" | xclip -sel clip
 write-notice "Url to install Krita has been saved to clipboard"
