@@ -1,7 +1,13 @@
 #!/bin/bash
 
 # stop script on error
-set -e
+set -eo pipefail
+
+# Ask root password for sudo usage
+echo "Please input root password"
+read -s -p Password: pswd
+
+SUDO="echo $pswd | sudo -S"
 
 write-notice() {
     echo
@@ -21,18 +27,21 @@ git-force-pull-repo() {
 cd ~
 
 write-notice "Adding ppas"
-sudo add-apt-repository -y ppa:mutate/ppa
-sudo add-apt-repository -y ppa:pi-rho/dev
-sudo add-apt-repository -y ppa:moka/stable
-sudo add-apt-repository -y ppa:mozillateam/firefox-next
-# reinstate f.lux?
+"$SUDO" <<EOF
+  add-apt-repository -y ppa:mutate/ppa
+  add-apt-repository -y ppa:pi-rho/dev
+  add-apt-repository -y ppa:moka/stable
+  add-apt-repository -y ppa:mozillateam/firefox-next
+EOF
 
 write-notice "Updating the system"
-sudo apt-get -y update
-sudo apt-get -y upgrade
+"$SUDO" <<EOF
+  apt-get -y update
+  apt-get -y upgrade
+EOF
 
 write-notice "Installing programs via apt-get"
-sudo apt-get install -y \
+"$SUDO" apt-get install -y \
      curl git-core gitg xclip jq tree caca-utils lynx poppler-utils \
      mediainfo wmctrl unity-tweak-tool compizconfig-settings-manager compiz-plugins \
      utfout libncurses5-dev libncursesw5-dev \
@@ -45,7 +54,7 @@ sudo apt-get install -y \
 # In mutate, use the shortcut Ctrl+Meta+S to launch (type it in)
 
 write-notice "Setting Theme"
-gsettings set org.gnome.desktop.interface icon-theme "Faba-mono" # <- not sure if that works, can always use "Unity Tweak"
+gsettings set org.gnome.desktop.interface icon-theme "Faba-mono" # <- not sure if that always works, can always use "Unity Tweak"
 
 write-notice "Installing bashmarks"
 cd ~
@@ -103,7 +112,7 @@ eval `dircolors ~/.dircolors`
 cd tmp
 git clone https://github.com/sigurdga/gnome-terminal-colors-solarized.git
 cd gnome-terminal-colors-solarized
-sudo chmod +x set_dark.sh
+"$SUDO" chmod +x set_dark.sh
 ./set_dark.sh
 
 write-notice "Fixing default shortcuts"
@@ -115,7 +124,7 @@ dconf write /org/compiz/integrated/show-hud '[""]'
 dconf write /org/gnome/desktop/wm/keybindings/activate-window-menu '[""]'
 
 write-notice "Installing bananamacs"
-sudo apt-get build-dep emacs24
+"$SUDO" apt-get build-dep emacs24
 EMACS_VER=24.4
 cd ~
 mkdir Tools
@@ -128,14 +137,14 @@ cd emacs-"$EMACS_VER"
 mkdir build
 cd build
 export CC=gcc CXX=g++; ../configure --prefix=/usr/local  --with-x-toolkit=gtk3 --with-wide-int && make bootstrap
-sudo make install
+"$SUDO" make install
 # Mame Emacs for terminal use
 cd ~/Tools/temacs-"$EMACS_VER"
 ./autogen.sh
 mkdir build
 cd build
 export CC=gcc CXX=g++; ../configure --prefix=/usr/local --program-prefix=t --without-all --without-x --with-wide-int --with-xml2 && make bootstrap
-sudo make install
+"$SUDO" make install
 # Set up .emacs.d
 cd ~
 mkdir -vp .emacs.d
@@ -146,9 +155,9 @@ write-notice "Installing AG - the silver searcher"
 cd ~/tmp
 git clone git@github.com:ggreer/the_silver_searcher.git
 cd the_silver_searcher
-sudo chmod +x build.sh
+"$SUDO" chmod +x build.sh
 ./build.sh
-sudo make install
+"$SUDO" make install
 
 write-notice "Setting up Muzei"
 cd ~/GitRepos/Muzei-Bash/
@@ -167,14 +176,14 @@ sbcl --non-interactive \
      --eval '(ql:quickload "quicklisp-slime-helper")' \
      --eval '(ql:quickload "clhs")' \
      --eval '(clhs:install-clhs-use-local)'
-sudo git clone https://github.com/sbcl/sbcl.git /opt/sbcl
+"$SUDO" git clone https://github.com/sbcl/sbcl.git /opt/sbcl
 
 write-notice "Installing bananamacs dependencies"
 emacs --daemon
 kill-emacs
 
 write-notice "Installing shellcheck"
-sudo apt-get -y install cabal-install
+"$SUDO" apt-get -y install cabal-install
 cabal update
 cabal install cabal-install
 cabal install shellcheck
@@ -185,12 +194,12 @@ cd ~/GitRepos
 git clone git@github.com:Xfennec/cv.git
 cd cv
 make
-sudo make install
+"$SUDO" make install
 
 write-notice "Installing tldr" # Shortened man pages
 cd ~/tmp
 wget https://github.com/pranavraja/tldr/releases/download/v1/tldr_0.1.0_amd64.deb
-sudo dpkg -i tldr_0.1.0_amd64.deb
+"$SUDO" dpkg -i tldr_0.1.0_amd64.deb
 
 write-notice "Installing fzf" # Fuzzy completion on C-t (current dir) C-r (history) and M-c (cd)
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -200,7 +209,7 @@ echo "https://krita.org/download/krita-desktop/" | xclip -sel clip
 write-notice "Url to install Krita has been saved to clipboard"
 
 write-notice "Removing warnings during GnuPG interaction with Gnome keyring"
-sudo sed -i s/AGENT_ID/AGENX_ID/ "$(which gpg2)"
+"$SUDO" sed -i s/AGENT_ID/AGENX_ID/ "$(which gpg2)"
 
 cd ~
 write-notice "BABOON LINUX IS READY!"
