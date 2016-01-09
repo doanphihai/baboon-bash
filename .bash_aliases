@@ -202,7 +202,7 @@ alias docker-rm-untagged-images='docker rmi $(docker images -a | grep '\''^<none
 alias docker-ps-short='docker ps -a | sed '\''s/\(  \+\)/\1?/g'\'' | cut -d"?" -f2,5,7 | tr -d "?"'
 
 function docker-ip-for {
-    docker inspect "$@" | grep IPAddress | cut -d'"' -f4
+    docker inspect --format '{{ .NetworkSettings.IPAddress }}' "$@"
 }
 
 # ranger
