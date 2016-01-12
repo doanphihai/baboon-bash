@@ -101,3 +101,4 @@
 - [08/11/15 15h] Ibeyi ~ River
 - [19/11/15 01h] Kate Tempest ~ Lonely Daze
 - [17/12/15 23h] Talib Kweli ~ Get by
+- [12/01/16 18h] Panacea ~ Epiphany (DJ Nu-Mark Remix)
