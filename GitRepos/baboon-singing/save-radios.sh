@@ -114,6 +114,9 @@ song() {
         'rand') local random_song=$(song "$1" list | rl --count 1 | cut -d']' -f2-)
                 echo "$random_song" " (saved to clipboard)"
                 echo "$random_song" | xclip -sel clip
+                read -p "Find on Youtube? (y/N): "
+                [[ "$REPLY" == "y" ]] && \
+                    firefox --new-tab "https://duckduckgo.com/?q= $random_song "'!yt'
                 return ;;
         # start playing the radio without outputting anything
         'listen'|'play') local radio_name=$(echo "$1" | tr '[:lower:]' '[:upper:]')
@@ -136,7 +139,7 @@ song() {
     song "$1" list | grep "$(artist "$escaped_current")"
 
     # save to git-versionned file
-    read -p "Would you like to save that song (y/N)?"
+    read -p "Would you like to save that song? (y/N): "
     [[ "$REPLY" == "y" ]] || return
 
     local oneLiner=$(format-for-saving "$escaped_current")
