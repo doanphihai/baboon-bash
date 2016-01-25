@@ -112,11 +112,13 @@ song() {
                 return ;;
         # show a randomly chosen saved song and put it in the clipboard
         'rand') local random_song=$(song "$1" list | rl --count 1 | cut -d']' -f2-)
-                echo "$random_song" " (saved to clipboard)"
-                echo "$random_song" | xclip -sel clip
-                read -p "Find on Youtube? (y/N): "
+                echo -n "$random_song"
+                echo -n ' | '
+                read -p "(y)outube/(c)opy/(N)othing: "
                 [[ "$REPLY" == "y" ]] && \
                     firefox --new-tab "https://duckduckgo.com/?q= $random_song "'!yt'
+                [[ "$REPLY" == "c" ]] && \
+                    echo "$random_song" | xclip -sel clip
                 return ;;
         # start playing the radio without outputting anything
         'listen'|'play') local radio_name=$(echo "$1" | tr '[:lower:]' '[:upper:]')
