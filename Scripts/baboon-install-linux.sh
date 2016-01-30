@@ -29,7 +29,6 @@ git-force-pull-repo() {
 cd ~
 
 write-notice "Adding ppas"
-sudobab add-apt-repository -y ppa:mutate/ppa
 sudobab add-apt-repository -y ppa:pi-rho/dev
 sudobab add-apt-repository -y ppa:moka/stable
 sudobab add-apt-repository -y ppa:mozillateam/firefox-next
@@ -43,10 +42,10 @@ sudobab apt-get install -y \
      curl git-core gitg xclip jq tree caca-utils lynx poppler-utils \
      mediainfo wmctrl unity-tweak-tool compizconfig-settings-manager compiz-plugins \
      utfout libncurses5-dev libncursesw5-dev \
-     moka-icon-theme faba-mono-icons \
+     moka-icon-theme faba-icon-theme \
      highlight atool mplayer \
      automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev \
-     tmux mutate randomize-lines sbcl firefox ncdu nethogs redshift-gtk \
+     tmux synapse randomize-lines sbcl firefox ncdu nethogs redshift-gtk \
      aspell-fr kcolorchooser
 
 # In mutate, use the shortcut Ctrl+Meta+S to launch (type it in)
@@ -61,12 +60,13 @@ cd ~/tmp
 git clone git://github.com/huyng/bashmarks.git
 cd bashmarks
 make install
+echo "source ~/.local/bin/bashmarks.sh" >> ~/.bashrc
 
 write-notice "Fixing .bashrc"
 cd ~
 sed -i 's/^alias l=.\+$//' .bashrc # removes alias l so that bashmarks can work properly
 source ~/.bashrc
-unalias l
+unalias l ||:
 
 write-notice "Adding shortcuts (F2->F4 - F7->F8) for terminal/emacs/firefox/dota2/vlc"
 media_keys=org.gnome.settings-daemon.plugins.media-keys
