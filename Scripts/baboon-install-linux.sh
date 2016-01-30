@@ -7,7 +7,9 @@ set -eo pipefail
 echo "Please input root password"
 read -s -p Password: pswd
 
-SUDO="echo $pswd | sudo -S"
+sudobab() {
+    echo "$pswd" | sudo -S "$@"
+}
 
 write-notice() {
     echo
@@ -27,21 +29,17 @@ git-force-pull-repo() {
 cd ~
 
 write-notice "Adding ppas"
-"$SUDO" <<EOF
-  add-apt-repository -y ppa:mutate/ppa
-  add-apt-repository -y ppa:pi-rho/dev
-  add-apt-repository -y ppa:moka/stable
-  add-apt-repository -y ppa:mozillateam/firefox-next
-EOF
+sudobab add-apt-repository -y ppa:mutate/ppa
+sudobab add-apt-repository -y ppa:pi-rho/dev
+sudobab add-apt-repository -y ppa:moka/stable
+sudobab add-apt-repository -y ppa:mozillateam/firefox-next
 
 write-notice "Updating the system"
-"$SUDO" <<EOF
-  apt-get -y update
-  apt-get -y upgrade
-EOF
+sudobab apt-get -y update
+sudobab apt-get -y upgrade
 
 write-notice "Installing programs via apt-get"
-"$SUDO" apt-get install -y \
+sudobab apt-get install -y \
      curl git-core gitg xclip jq tree caca-utils lynx poppler-utils \
      mediainfo wmctrl unity-tweak-tool compizconfig-settings-manager compiz-plugins \
      utfout libncurses5-dev libncursesw5-dev \
@@ -112,7 +110,7 @@ eval `dircolors ~/.dircolors`
 cd tmp
 git clone https://github.com/sigurdga/gnome-terminal-colors-solarized.git
 cd gnome-terminal-colors-solarized
-"$SUDO" chmod +x set_dark.sh
+sudobab chmod +x set_dark.sh
 ./set_dark.sh
 
 write-notice "Fixing default shortcuts"
@@ -124,7 +122,7 @@ dconf write /org/compiz/integrated/show-hud '[""]'
 dconf write /org/gnome/desktop/wm/keybindings/activate-window-menu '[""]'
 
 write-notice "Installing bananamacs"
-"$SUDO" apt-get build-dep emacs24
+sudobab apt-get build-dep emacs24
 EMACS_VER=24.4
 cd ~
 mkdir Tools
@@ -137,14 +135,14 @@ cd emacs-"$EMACS_VER"
 mkdir build
 cd build
 export CC=gcc CXX=g++; ../configure --prefix=/usr/local  --with-x-toolkit=gtk3 --with-wide-int && make bootstrap
-"$SUDO" make install
+sudobab make install
 # Mame Emacs for terminal use
 cd ~/Tools/temacs-"$EMACS_VER"
 ./autogen.sh
 mkdir build
 cd build
 export CC=gcc CXX=g++; ../configure --prefix=/usr/local --program-prefix=t --without-all --without-x --with-wide-int --with-xml2 && make bootstrap
-"$SUDO" make install
+sudobab make install
 # Set up .emacs.d
 cd ~
 mkdir -vp .emacs.d
@@ -155,9 +153,9 @@ write-notice "Installing AG - the silver searcher"
 cd ~/tmp
 git clone git@github.com:ggreer/the_silver_searcher.git
 cd the_silver_searcher
-"$SUDO" chmod +x build.sh
+sudobab chmod +x build.sh
 ./build.sh
-"$SUDO" make install
+sudobab make install
 
 write-notice "Setting up Muzei"
 cd ~/GitRepos/Muzei-Bash/
@@ -176,14 +174,14 @@ sbcl --non-interactive \
      --eval '(ql:quickload "quicklisp-slime-helper")' \
      --eval '(ql:quickload "clhs")' \
      --eval '(clhs:install-clhs-use-local)'
-"$SUDO" git clone https://github.com/sbcl/sbcl.git /opt/sbcl
+sudobab git clone https://github.com/sbcl/sbcl.git /opt/sbcl
 
 write-notice "Installing bananamacs dependencies"
 emacs --daemon
 kill-emacs
 
 write-notice "Installing shellcheck"
-"$SUDO" apt-get -y install cabal-install
+sudobab apt-get -y install cabal-install
 cabal update
 cabal install cabal-install
 cabal install shellcheck
@@ -194,12 +192,12 @@ cd ~/GitRepos
 git clone git@github.com:Xfennec/cv.git
 cd cv
 make
-"$SUDO" make install
+sudobab make install
 
 write-notice "Installing tldr" # Shortened man pages
 cd ~/tmp
 wget https://github.com/pranavraja/tldr/releases/download/v1/tldr_0.1.0_amd64.deb
-"$SUDO" dpkg -i tldr_0.1.0_amd64.deb
+sudobab dpkg -i tldr_0.1.0_amd64.deb
 
 write-notice "Installing fzf" # Fuzzy completion on C-t (current dir) C-r (history) and M-c (cd)
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -209,7 +207,7 @@ echo "https://krita.org/download/krita-desktop/" | xclip -sel clip
 write-notice "Url to install Krita has been saved to clipboard"
 
 write-notice "Removing warnings during GnuPG interaction with Gnome keyring"
-"$SUDO" sed -i s/AGENT_ID/AGENX_ID/ "$(which gpg2)"
+sudobab sed -i s/AGENT_ID/AGENX_ID/ "$(which gpg2)"
 
 cd ~
 write-notice "BABOON LINUX IS READY!"
