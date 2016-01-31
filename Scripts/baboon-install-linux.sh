@@ -30,7 +30,6 @@ cd ~
 
 write-notice "Adding ppas"
 sudobab add-apt-repository -y ppa:pi-rho/dev
-sudobab add-apt-repository -y ppa:moka/stable
 sudobab add-apt-repository -y ppa:mozillateam/firefox-next
 
 write-notice "Updating the system"
@@ -42,11 +41,12 @@ sudobab apt-get install -y \
      curl git-core gitg xclip jq tree caca-utils lynx poppler-utils \
      mediainfo wmctrl unity-tweak-tool compizconfig-settings-manager compiz-plugins \
      utfout libncurses5-dev libncursesw5-dev \
-     moka-icon-theme faba-icon-theme \
      highlight atool mplayer \
      automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev \
      tmux synapse randomize-lines sbcl firefox ncdu nethogs redshift-gtk \
      aspell-fr kcolorchooser
+
+# Eventualy, download Dalisha icon theme and extract it to ~/.icons
 
 # In mutate, use the shortcut Ctrl+Meta+S to launch (type it in)
 
