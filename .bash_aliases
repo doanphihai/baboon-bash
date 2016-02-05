@@ -303,3 +303,4 @@ function mount-trinasse {
          -o user="${trinasse_username}",pass="${trinasse_password}",uid=1000,gid=1000
 }
 alias df-disks-only='df -h | grep --color=never -e ^/'
+
