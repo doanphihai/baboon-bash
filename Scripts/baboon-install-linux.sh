@@ -44,7 +44,7 @@ sudobab apt-get install -y \
      highlight atool mplayer \
      automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev \
      tmux synapse randomize-lines sbcl firefox ncdu nethogs redshift-gtk \
-     aspell-fr kcolorchooser
+     aspell-fr kcolorchooser vlc
 
 # Eventualy, download Dalisha icon theme and extract it to ~/.icons
 
@@ -208,6 +208,12 @@ write-notice "Url to install Krita has been saved to clipboard"
 
 write-notice "Removing warnings during GnuPG interaction with Gnome keyring"
 sudobab sed -i s/AGENT_ID/AGENX_ID/ "$(which gpg2)"
+
+write-notice "Installing sift (grep replacement)"
+cd ~/tmp
+wget https://sift-tool.org/downloads/sift/sift_0.7.1_linux_amd64.tar.gz
+aunpack sift_0.7.1_linux_amd64.tar.gz
+sudobab mv sift_0.7.1_linux_amd64/sift /usr/local/bin/sift
 
 cd ~
 write-notice "BABOON LINUX IS READY!"
