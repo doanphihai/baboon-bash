@@ -304,3 +304,4 @@ function mount-trinasse {
 }
 alias df-disks-only='df -h | grep --color=never -e ^/'
 
+alias opened-ports-localhost='sudo nmap -sV -O localhost'
