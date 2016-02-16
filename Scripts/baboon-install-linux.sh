@@ -215,6 +215,14 @@ wget https://sift-tool.org/downloads/sift/sift_0.7.1_linux_amd64.tar.gz
 aunpack sift_0.7.1_linux_amd64.tar.gz
 sudobab mv sift_0.7.1_linux_amd64/sift /usr/local/bin/sift
 
+write-notice "Installing diff-so-fancy"
+mkdir -vp ~/bin
+cd ~/bin
+wget https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/diff-so-fancy
+wget https://raw.githubusercontent.com/git/git/master/contrib/diff-highlight/diff-highlight
+chmod +x diff-so-fancy diff-highlight
+echo 'export PATH="$PATH:$HOME/bin"' >> ~/.bashrc
+
 cd ~
 write-notice "BABOON LINUX IS READY!"
 
