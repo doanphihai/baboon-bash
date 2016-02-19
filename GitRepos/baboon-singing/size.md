@@ -103,3 +103,4 @@
 - [17/12/15 23h] Talib Kweli ~ Get by
 - [12/01/16 18h] Panacea ~ Epiphany (DJ Nu-Mark Remix)
 - [12/01/16 18h] Stephanie McKay ~ This Letter
+- [19/02/16 23h] Nu ~ Fool
