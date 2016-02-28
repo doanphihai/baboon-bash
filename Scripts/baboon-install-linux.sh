@@ -223,6 +223,24 @@ wget https://raw.githubusercontent.com/git/git/master/contrib/diff-highlight/dif
 chmod +x diff-so-fancy diff-highlight
 echo 'export PATH="$PATH:$HOME/bin"' >> ~/.bashrc
 
+write-notice "Installing universal-ctags"
+cd ~/Tools
+git clone git@github.com:universal-ctags/ctags.git
+./autogen.sh
+./configure
+make
+sudobab make install
+
+write-notice "Installing ggtags backed by ctags"
+GGTAGS_VERSION=6.5.2
+cd ~/Tools
+wget http://tamacom.com/global/global-"$GGTAGS_VERSION".tar.gz
+aunpack global-"$GGTAGS_VERSION".tar.gz
+cd global-"$GGTAGS_VERSION"
+./configure --with-exuberant-ctags=$(which ctags)
+make
+sudobab make install
+
 cd ~
 write-notice "BABOON LINUX IS READY!"
 
