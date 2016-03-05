@@ -226,6 +226,7 @@ echo 'export PATH="$PATH:$HOME/bin"' >> ~/.bashrc
 write-notice "Installing universal-ctags"
 cd ~/Tools
 git clone git@github.com:universal-ctags/ctags.git
+cd ctags
 ./autogen.sh
 ./configure
 make
@@ -240,6 +241,14 @@ cd global-"$GGTAGS_VERSION"
 ./configure --with-exuberant-ctags=$(which ctags)
 make
 sudobab make install
+
+pip install pygments
+cat <<EOF >> ~/.bashrc
+
+export GTAGSLABEL=pygments
+export GTAGSCONF=/usr/local/share/gtags/gtags.conf
+
+EOF
 
 cd ~
 write-notice "BABOON LINUX IS READY!"

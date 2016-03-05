@@ -28,6 +28,9 @@
 ## Scripts
 !Scripts
 !Scripts/*
+Scripts/GTAGS
+Scripts/GRTAGS
+Scripts/GPATH
 
 ## Apps/Languages config
 !.gemrc
