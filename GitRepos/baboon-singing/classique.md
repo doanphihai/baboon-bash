@@ -21,3 +21,4 @@
 - [12/10/15 15h] Mozart ~ Grande Messe en ut m:Kyrie  Tilling / Gabrieli Consort / McCreesh
 - [19/10/15 04h] Wagner ~ Tannhäuser : Ouverture  Philharmonia / O.Klemperer
 - [13/11/15 02h] Brahms ~ Variations sur un thème de Joseph Haydn  Orch Phil de Berlin / H.von Karajan- [19/12/15 17h] Dvorak ~ Suite Américaine:2è mvt  Royal Philh Orch / A.Dorati
+- [08/03/16 17h] Beethoven ~ Sonate pour piano n°21 \
