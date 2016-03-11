@@ -77,7 +77,8 @@ gsettings set $media_keys custom-keybindings "['"$keymap"custom1/',
                                                '"$keymap"custom2/',
                                                '"$keymap"custom3/',
                                                '"$keymap"custom4/',
-                                               '"$keymap"custom5/']"
+                                               '"$keymap"custom5/',
+                                               '"$keymap"custom6/']"
 
 gsettings set $media_keys.custom-keybinding:"$keymap"custom1/ name "switch-to-terminal"
 gsettings set $media_keys.custom-keybinding:"$keymap"custom1/ command "/home/baboon/Scripts/cycle_window.sh terminal"
@@ -98,6 +99,10 @@ gsettings set $media_keys.custom-keybinding:"$keymap"custom4/ binding "F7"
 gsettings set $media_keys.custom-keybinding:"$keymap"custom5/ name "switch-to-vlc"
 gsettings set $media_keys.custom-keybinding:"$keymap"custom5/ command "bash /home/baboon/Scripts/cycle_window.sh vlc"
 gsettings set $media_keys.custom-keybinding:"$keymap"custom5/ binding "F8"
+
+gsettings set $media_keys.custom-keybinding:"$keymap"custom6/ name "switch-to-slack"
+gsettings set $media_keys.custom-keybinding:"$keymap"custom6/ command "bash /home/baboon/Scripts/cycle_window.sh slack"
+gsettings set $media_keys.custom-keybinding:"$keymap"custom6/ binding "F10"
 
 write-notice "Installing baboon-bash"
 cd ~
