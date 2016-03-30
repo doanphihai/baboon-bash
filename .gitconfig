@@ -1,6 +1,6 @@
 [user]
 	name = Louis Kottmann
-        email = louis.kottmann@gmail.com
+	email = louis.kottmann@gmail.com
 
 [branch]
 	; When a new branch is created with git branch or git checkout that tracks
@@ -9,22 +9,22 @@
 	; set to true. When local, rebase is set to true for tracked branches of other
 	; local branches. When remote, rebase is set to true for tracked branches of
 	; remote-tracking branches. When always, rebase will be set to true for all
-	; tracking branches.        	
-        autosetuprebase = always
+	; tracking branches.
+	autosetuprebase = always
 
 [diff]
-        tool = ediff
-        guitool = ediff
+	tool = ediff
+	guitool = ediff
 
 [difftool "ediff"]
-        cmd = ~/.emacs.d/personal/scripts/ediff.sh $LOCAL $REMOTE $MERGED
+	cmd = ~/.emacs.d/personal/scripts/ediff.sh $LOCAL $REMOTE $MERGED
 
 [merge]
-        tool = ediff
+	tool = ediff
 
 [mergetool "ediff"]
-        cmd = ~/.emacs.d/personal/scripts/ediff.sh $LOCAL $REMOTE $MERGED $BASE
-        trustExitCode = true
+	cmd = ~/.emacs.d/personal/scripts/ediff.sh $LOCAL $REMOTE $MERGED $BASE
+	trustExitCode = true
 
 [alias]
 	a = add
@@ -65,6 +65,7 @@
 [dude]
 	icon = ~/.git-dude/Logos-Github-icon.png
 	notify-command = notify-send -t 20000 -i \"$ICON_PATH\" \"$TITLE\" \"$DESCRIPTION\"
+
 [color]
 	status = auto
 	diff = auto
