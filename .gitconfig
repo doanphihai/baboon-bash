@@ -32,10 +32,10 @@
 	pr = pull --rebase
 	c = commit
 	cm = commit --message
-	cam = commit --all --message
+	cam = !git add --all && git commit --message
 	ca = commit --amend
-	caa = commit --all --amend
-	car = commit --all --reuse-message=HEAD
+	caa = !git add --all && git commit --amend
+	car = !git add --all && git commit --reuse-message=HEAD
 	st = status -sb
 	br = branch
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
