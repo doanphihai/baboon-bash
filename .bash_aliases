@@ -190,6 +190,6 @@ function mount-trinasse {
 alias df-disks-only='df -h | grep --color=never -e ^/'
 
 alias opened-ports-localhost='sudo nmap -sV -O localhost'
-alias ssh-kill-frozen-session-paste='~.<cr>'
+alias ssh-frozen='echo "~.<cr>" | xclip -sel clip'
 unalias ll
 alias ll='ls -alFh'
