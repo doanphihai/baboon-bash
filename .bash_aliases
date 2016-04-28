@@ -193,3 +193,4 @@ alias opened-ports-localhost='sudo nmap -sV -O localhost'
 alias ssh-frozen='echo "~.<cr>" | xclip -sel clip'
 unalias ll
 alias ll='ls -alFh'
+alias ag-unique-ready='ag --nogroup --nobreak --noheading --nocolor --nofilename --nonumbers -w'
