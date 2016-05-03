@@ -141,7 +141,7 @@ mkdir build
 cd build
 export CC=gcc CXX=g++; ../configure --prefix=/usr/local  --with-x-toolkit=gtk3 --with-wide-int && make bootstrap
 sudobab make install
-# Mame Emacs for terminal use
+# Make Emacs for terminal use
 cd ~/Tools/temacs-"$EMACS_VER"
 ./autogen.sh
 mkdir build
