@@ -128,7 +128,7 @@ dconf write /org/gnome/desktop/wm/keybindings/activate-window-menu '[""]'
 
 write-notice "Installing bananamacs"
 sudobab apt-get build-dep emacs24
-EMACS_VER=24.4
+EMACS_VER=24.5
 cd ~
 mkdir Tools
 cd Tools
