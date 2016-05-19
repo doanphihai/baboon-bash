@@ -24,3 +24,4 @@
 - [19/12/15 17h] Dvorak ~ Suite Américaine:2è mvt  Royal Philh Orch / A.Dorati
 - [08/03/16 17h] Beethoven ~ Sonate pour piano n°21
 - [06/04/16 14h] Schubert ~ Symphonie n°8 "Inachevée": 1er mvt
+- [19/05/16 16h] Babajanyan ~ Elegy  Sona Shaboyan
