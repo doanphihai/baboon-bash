@@ -123,7 +123,7 @@ function openssl-test-server-and-port {
     openssl s_client -showcerts -connect "$@"
 }
 
-alias suu='sudo apt-get update && sudo apt-get upgrade'
+alias suu='sudo apt-get update && sudo apt-get -y upgrade'
 
 function find-big-files {
     find ${1-~} -type f -size +${2-50M} -exec ls -lh {} \;
