@@ -56,6 +56,8 @@
 	pull-gg = !git pull && git new
 	push-gg = !git push && git new
 	fixup = !sh -c 'git commit --fixup="$1" && git rebase --interactive --autostash --autosquash "$1"~1' -
+	su = submodule update
+	sui = submodule update --init
 
 [core]
 	excludesfile = ~/.gitignore_global
