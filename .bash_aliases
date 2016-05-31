@@ -194,3 +194,7 @@ alias ssh-frozen='echo "~.<cr>" | xclip -sel clip'
 unalias ll
 alias ll='ls -alFh'
 alias ag-unique-ready='ag --nogroup --nobreak --noheading --nocolor --nofilename --nonumbers -w'
+
+function xcopy {
+    xclip -i "$1" -sel clip
+}
