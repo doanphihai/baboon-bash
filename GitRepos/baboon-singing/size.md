@@ -115,3 +115,4 @@
 - [18/05/16 17h] Jack Garratt ~ Worry
 - [24/05/16 12h] Indiana ~ Solo Dancing
 - [25/05/16 11h] ONEdependent  Taki76 ~ Feel My Pain (feat. Narykcin)
+- [10/06/16 16h] Smooth ~ My Body
