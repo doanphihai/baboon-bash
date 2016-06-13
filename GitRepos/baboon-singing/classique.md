@@ -25,3 +25,4 @@
 - [08/03/16 17h] Beethoven ~ Sonate pour piano n°21
 - [06/04/16 14h] Schubert ~ Symphonie n°8 "Inachevée": 1er mvt
 - [19/05/16 16h] Babajanyan ~ Elegy  Sona Shaboyan
+- [13/06/16 10h] Mendelssohn ~ Symphonie n°1: 4e mvt  Irish Chamber / J.Widmann
